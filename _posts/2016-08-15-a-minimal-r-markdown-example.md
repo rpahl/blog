@@ -30,7 +30,9 @@ layout: post
 <div id="equations" class="section level2">
 <h2>Equations</h2>
 <p>This is an inline equation with an inline R code chunk: <span class="math inline">\(\pi = 3.1415927\)</span>.</p>
-<p>This is the Gaussian integral equation: <span class="math display">\[\int_{-\infty}^{+\infty} e^{-x^2}~dx = \sqrt{\pi}.\]</span></p>
+<p>This is the Gaussian integral equation: <span class="math display">\[
+\int_{-\infty}^{+\infty} e^{-x^2}~dx = \sqrt{\pi}.
+\]</span></p>
 </div>
 <div id="plots" class="section level2">
 <h2>Plots</h2>
