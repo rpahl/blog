@@ -45,7 +45,7 @@ footer-links:
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # More info on how to get your shortname here: https://help.disqus.com/installation/whats-a-shortname
-disqus: blog-solidas
+disqus: rpahl
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
