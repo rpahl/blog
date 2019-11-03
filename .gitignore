@@ -12,3 +12,6 @@ package.json
 .Rhistory
 jekyll-now-r-template.Rproj
 README.html
+
+_knitr/*.html
+_knitr/*.md
