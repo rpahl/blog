@@ -15,3 +15,5 @@ README.html
 
 _knitr/*.html
 _knitr/*.md
+knitr_files/*
+_knitr/figures
