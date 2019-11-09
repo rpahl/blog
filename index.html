@@ -3,12 +3,12 @@ layout: default
 title: My posts
 ---
 
-<h2>{{ page.title }}:</h2>
+<h2>{{ page.title }}:</h2>, contributing to <a target="_blank" href="https://www.r-bloggers.com/">R-bloggers</a>
 
 <ul class="posts">
 
   {% for post in site.posts %}
     <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
-  
+
 </ul>
