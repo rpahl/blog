@@ -10,6 +10,7 @@ node_modules
 package.json
 .Rproj.user
 .Rhistory
+*.Rproj
 jekyll-now-r-template.Rproj
 README.html
 
@@ -17,3 +18,5 @@ _knitr/*.html
 _knitr/*.md
 knitr_files/*
 _knitr/figures
+*_cache
+*_files
