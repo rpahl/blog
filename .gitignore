@@ -20,3 +20,6 @@ knitr_files/*
 _knitr/figures
 *_cache
 *_files
+
+.RData
+tags
