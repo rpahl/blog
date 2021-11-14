@@ -14,12 +14,16 @@ navbar:
       href: https://stackoverflow.com/users/8120617/rpahl
     - icon: fab fa-twitter
       href: https://twitter.com/romanpahl
+    - icon: fa fa-rss
+      href: index.xml
 base_url: https://rpahl.github.io/r-some-blog/
 collections:
   posts:
+    categories: true
     creative_commons: CC BY-SA
     disqus: rpahl
     share: [twitter, linkedin]
+    custom: _custom.html
 output: 
   distill::distill_article:
     css: theme.css

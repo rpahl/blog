@@ -7,7 +7,9 @@ description: |
 date: 11-16-2019
 output:
   distill::distill_article:
+    theme: article
     toc: true
+    highlight: zenburn
 ---
 
 
@@ -120,7 +122,7 @@ Name clashes with existing R base functions must be avoided:
 T <- FALSE
 c <- 10
 mean <- function(a, b) (a + b) / 2
-file.path <- "~/Downloads" # clashes with base::file.path function
+file.path <- "~/Downloads" # clashes with base::file.path
 ```
 
 Loop variables or function arguments can be just single letters if
