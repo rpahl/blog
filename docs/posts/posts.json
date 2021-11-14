@@ -1,5 +1,17 @@
 [
   {
+    "path": "posts/ref-label/",
+    "title": "Why I don't use R Markdown's ref.label",
+    "description": "R Markdown provides the chunk option `ref.label` to \nreuse chunks. In this post, I'll show potential problems with this approach\nand present an easy and safe alternative.",
+    "author": [],
+    "date": "2020-08-08",
+    "categories": [],
+    "contents": "\r\nMotivation\r\nConsider you have defined variable x,\r\n\r\n\r\nx = 1\r\n\r\n\r\n\r\nand define another chunk, where you simply add one up\r\n\r\n```{r addOne}\r\nsum = x + 1\r\nsum\r\n```\r\n\r\nresulting in\r\n\r\n[1] 2\r\n\r\nTo reuse this chunk, an empty code block is created referencing the above chunk\r\n\r\n```{r, ref.label = 'addOne'}\r\n```\r\n\r\nagain resulting in\r\n\r\n[1] 2\r\n\r\nBehind the scenes, the chunk basically was copy-pasted and then executed again. One problem is that one can easily lose track of the scope of the variables used in that chunk. For example, let’s assume you use the sum variable further below in your document to store some other result:\r\n\r\n\r\nsum = 10\r\n\r\n\r\n\r\nIf you now again reuse the above chunk\r\n\r\n```{r, ref.label = 'addOne'}\r\n```\r\n\r\n\r\n[1] 2\r\n\r\nsum has been overwritten by the chunk:\r\n\r\n\r\nprint(sum)  # expect sum == 10\r\n\r\n\r\n[1] 2\r\n\r\nSince the ref.label chunk is empty, this issue might not be easily spotted.\r\nAnother inconvenience arrises with RStudio’s notebook functionality to execute individual code chunks. While the original chunk can be executed, none of the empty ref.label chunks can. Funnily enough, this inconvenience was what made me think about an alternative solution.\r\nAlternative solution\r\nLuckily, the solution is quite simple - put your entire chunk inside a function and then “reference” the function:\r\n\r\n\r\nadd1 <- function(x) {\r\n    sum = x + 1\r\n    sum\r\n}\r\n\r\n\r\n\r\n\r\n\r\nadd1(x)\r\n\r\n\r\n[1] 2\r\n\r\nNow both the sum variable is perfectly scoped and the “referenced” call can be executed in the RStudio notebook as usual. Plus, of course, this “chunk” could be easily parametrized:\r\n\r\n\r\naddY <- function(x, y) {\r\n    sum = x + y\r\n    sum\r\n}\r\naddY(x, y = 1)\r\n\r\n\r\n[1] 2\r\n\r\nSummary\r\nDownsides of using ref.label:\r\npotential issues with (global) variables as chunk does not provide local scoping\r\nref.label chunks are empty and therefore cannot be executed in RStudio notebooks\r\nProposed solution: encapsulate entire chunk inside a function and then execute the function wherever you would reference the chunk.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-11-14T19:11:50+01:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/kable_if/",
     "title": "Quicker knitr kables in RStudio notebook",
     "description": "In this post a simple RStudio hack is presented on how to display tables\nproduced via knitr kable efficiently in the RStudio session.",
