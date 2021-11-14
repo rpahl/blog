@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some hopefully useful (or even awesome) stuff related to R programming.",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-11-14T18:46:03+01:00"
+    },
+    {
+      "path": "index.html",
+      "title": "R some blog",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-11-14T18:46:03+01:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
