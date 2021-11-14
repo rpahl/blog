@@ -24,7 +24,6 @@ output:
   distill::distill_article:
     css: styles.css
 
-repository_url: https://github.com/rpahl/r-some-blog
 
 rss:
   full_content: TRUE
