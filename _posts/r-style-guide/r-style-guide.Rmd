@@ -3,8 +3,7 @@ title: "My R Style Guide"
 description: |
   This is my take on an R style guide. As such, this is going to be a longer post.
   Still, I hope it - or at least some parts of it - are useful to some people out
-  there. Another guide worth mentioning is the
-  [Tidyverse Style Guide](https://style.tidyverse.org/) by Hadley Wickham.
+  there.
 date: 11-16-2019
 output:
   distill::distill_article:
