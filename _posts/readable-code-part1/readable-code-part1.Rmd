@@ -1,0 +1,95 @@
+---
+title: "Readable code with base R (part 1)"
+description: |
+  Producing readable R code is of great importance, especially if there is a 
+  chance that you will share your code with people other than your future self.
+  In this series of blog posts, I will present some (often underused) base R 
+  functions for this purpose.
+date: 07-30-2018
+output:
+  distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+```{r out.width = '60%', echo = FALSE}
+knitr::include_graphics("easy-read.png")
+```
+
+In this post, we cover `startsWith`, `endsWith`, and `Filter`.
+
+### `startsWith` and `endsWith` for string-matching
+
+There are special base functions for pre- or postfix matching.
+
+```{r}
+# Basic usage:
+w <- "Hello World!"
+startsWith(w, "Hell")
+
+startsWith(w, "Helo")
+
+endsWith(w, "!")
+```
+
+Of course, it also works with vectors. Can't remember the exact name of a base function? Try this... ;)
+
+```{r, include=T}
+base_funcs <- ls("package:base")
+
+base_funcs[startsWith(base_funcs, "row")]
+```
+
+The 'readable' property really shines when combined with control-flow.
+
+```{r}
+tell_file_type <- function(fn) {
+    # Check different file endings
+    if (endsWith(fn, "txt")) {
+        print("A text file.")
+    }
+    if (any(endsWith(fn, c("xlsx", "xls")))) {
+        print("An Excel file.")
+    }
+}
+tell_file_type("A.txt")
+
+tell_file_type("B.xls")
+```
+
+The resulting code reads very well.
+
+### `Filter`
+Using another nice base function, `Filter`, the above code can be further improved.
+
+```{r}
+get_file_type <- function(fn) {
+  file_endings <- c(text="txt", Excel="xls", Excel="xlsx")  
+  Filter(file_endings, f = function(x) endsWith(fn, x))
+}
+
+get_file_type("C.xlsx")
+```
+
+Again, very readable to my eyes. It should be noted that for this particular problem using `tools::file_ext` is even more appropriate, but I think the point has been made.
+
+Last but not least, since `Filter` works on lists, you can use it on a `data.frame` as well.
+
+```{r}
+dat <- data.frame(A=1:3, B=5:3, L=letters[1:3])
+dat
+
+Filter(dat, f = is.numeric)
+
+Filter(dat, f = Negate(is.numeric))  # or Filter(dat, f = function(x) !is.numeric(x))
+```
+
+That's it for now - see you in part 2.
+
+
