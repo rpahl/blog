@@ -1,0 +1,9 @@
+---
+title: "About this blog"
+description: |
+  Some hopefully useful (or even awesome) stuff related to R programming.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
