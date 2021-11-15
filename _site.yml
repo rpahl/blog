@@ -11,6 +11,8 @@ navbar:
   right:
     - text: "R packages"
       href: r-packages.html
+    - text: "Shiny Apps"
+      href: shiny-apps.html
       #menu:
       #  - text: "container"
       #    #icon: fab fa-r-project
