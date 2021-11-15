@@ -4,6 +4,10 @@ description: |
   In this post a simple RStudio hack is presented on how to display tables
   produced via knitr kable efficiently in the RStudio session.
 date: 11-17-2019
+categories:
+  - R-Markdown
+  - knitr
+  - R-Studio
 output:
   distill::distill_article:
     highlight: zenburn

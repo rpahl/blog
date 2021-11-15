@@ -9,16 +9,17 @@ body {
   font-weight: 400;
   color: #404040;      
   position: relative;
-  background: #fff9d9;      
+  background: #FFFFE7;      
 }
 
-/* Nav bar */
+
+/* Nav bar background: #21130d;*/
 
 .distill-site-nav {
   color: #ffffff;
   background-color: #47aee9;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 350;
 }
 
 
@@ -30,6 +31,13 @@ body {
 .distill-site-nav a:hover {
   color: #d5eaf6;
 }
+
+
+.nav-dropdown-content {
+  color: #21130d;
+  background: #FFFFE7;
+}
+
 
 /* source code */
 
@@ -59,3 +67,4 @@ d-article div.sourceCode pre {
   font-size: 75%;
   margin-right: 10%;
 }
+

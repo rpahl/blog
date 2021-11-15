@@ -116,7 +116,7 @@ and present an easy and safe alternative." />
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Why I don't use R Markdown's ref.label"]},{"type":"character","attributes":{},"value":["R Markdown provides the chunk option `ref.label` to \nreuse chunks. In this post, I'll show potential problems with this approach\nand present an easy and safe alternative. \n"]},{"type":"character","attributes":{},"value":["08-08-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["highlight"]}},"value":[{"type":"character","attributes":{},"value":["zenburn"]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","categories","output"]}},"value":[{"type":"character","attributes":{},"value":["Why I don't use R Markdown's ref.label"]},{"type":"character","attributes":{},"value":["R Markdown provides the chunk option `ref.label` to \nreuse chunks. In this post, I'll show potential problems with this approach\nand present an easy and safe alternative. \n"]},{"type":"character","attributes":{},"value":["08-08-2020"]},{"type":"character","attributes":{},"value":["R-Markdown","knitr"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["highlight"]}},"value":[{"type":"character","attributes":{},"value":["zenburn"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1475,12 +1475,19 @@ and present an easy and safe alternative." />
 <div class="d-title">
 <h1>Why I don’t use R Markdown’s ref.label</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">R-Markdown</div>
+<div class="dt=tag">knitr</div>
+</div>
 <!--/radix_placeholder_categories-->
 <p><p>R Markdown provides the chunk option <code>ref.label</code> to reuse chunks. In this post, I’ll show potential problems with this approach and present an easy and safe alternative.</p></p>
 </div>
 
 
 <div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="data:image/png;base64,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" width="50%" /></p>
+</div>
 <h2 id="motivation">Motivation</h2>
 <p>Consider you have defined variable <code>x</code>,</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1507,6 +1514,11 @@ sum
 </div>
 <p>again resulting in</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class="va">sum</span> <span class="op">=</span> <span class="va">x</span> <span class="op">+</span> <span class="fl">1</span>
+<span class="va">sum</span>
+</code></pre>
+</div>
 <pre><code>[1] 2</code></pre>
 </div>
 <p>Behind the scenes, the chunk basically was copy-pasted and then executed again. One problem is that one can easily lose track of the scope of the variables used in that chunk. For example, let’s assume you use the <code>sum</code> variable further below in your document to store some other result:</p>
@@ -1522,6 +1534,11 @@ sum
 ```</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class="va">sum</span> <span class="op">=</span> <span class="va">x</span> <span class="op">+</span> <span class="fl">1</span>
+<span class="va">sum</span>
+</code></pre>
+</div>
 <pre><code>[1] 2</code></pre>
 </div>
 <p><code>sum</code> has been overwritten by the chunk:</p>

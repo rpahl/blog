@@ -6,6 +6,8 @@ description: |
   In this series of blog posts, I will present some (often underused) base R 
   functions for this purpose.
 date: 07-30-2018
+categories:
+  - base R
 output:
   distill::distill_article:
     highlight: zenburn

@@ -1,10 +1,11 @@
 ---
 title: "My R Style Guide"
 description: |
-  This is my take on an R style guide. As such, this is going to be a longer post.
-  Still, I hope it - or at least some parts of it - are useful to some people out
-  there.
+  This is my take on an R style guide. As such, this is going to be a longer 
+  post in the hope that is useful to some people out there.
 date: 11-16-2019
+categories:
+  - coding style
 output:
   distill::distill_article:
     theme: article

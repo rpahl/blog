@@ -3,11 +3,22 @@ title: "R some blog"
 description: |
   Some hopefully useful (or even awesome) stuff related to R programming.
 output_dir: "docs"
+favicon: images/meatwork.jpg
 navbar:
   logo:
-    image: images/logo.jpg
+    image: images/meatwork.jpg
     href: https://github.com/rpahl
   right:
+    - text: "R packages"
+      href: r-packages.html
+      #menu:
+      #  - text: "container"
+      #    #icon: fab fa-r-project
+      #    href: https://CRAN.R-project.org/package=container
+      #  - text: "GroupSeq"
+      #    href: https://CRAN.R-project.org/package=GroupSeq
+    - text: "About Me"
+      href: about.html
     - icon: fab fa-github
       href: https://github.com/rpahl/r-some-blog
     - icon: fab fa-stack-overflow
@@ -19,6 +30,7 @@ navbar:
 base_url: https://rpahl.github.io/r-some-blog/
 collections:
   posts:
+    search: true
     categories: true
     creative_commons: CC BY-SA
     disqus: rpahl

@@ -5,11 +5,17 @@ description: |
   reuse chunks. In this post, I'll show potential problems with this approach
   and present an easy and safe alternative. 
 date: 08-08-2020
+categories:
+  - R-Markdown
+  - knitr
 output:
   distill::distill_article:
     highlight: zenburn
 ---
 
+```{r out.width = '50%', echo = FALSE, eval = TRUE}
+knitr::include_graphics("ref-label.png")
+```
 
 ## Motivation
 
@@ -42,9 +48,8 @@ cat("```{r, ref.label = 'addOne'}\n```")
 
 again resulting in
 
-```{r, ref.label = "addOne", echo = FALSE}
+```{r, ref.label = "addOne"}
 ```
-
 
 Behind the scenes, the chunk basically was copy-pasted and then executed again. One problem is that one can easily lose track of the scope of the variables used in that chunk. For example, let's assume you use the `sum` variable further below in your document to store some other result:
 
@@ -58,7 +63,7 @@ If you now again reuse the above chunk
 cat("```{r, ref.label = 'addOne'}\n```")
 ```
 
-```{r, ref.label = "addOne", echo = FALSE}
+```{r, ref.label = "addOne"}
 ```
 
 

@@ -87,27 +87,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>R some blog: About me</title>
+  <title>R some blog: R packages</title>
 
+  <meta property="description" itemprop="description" content="R packages developed by me."/>
 
   <link rel="icon" type="image/jpeg" href="images/meatwork.jpg"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="R some blog: About me"/>
+  <meta property="og:title" content="R some blog: R packages"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="R packages developed by me."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="R some blog"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="R some blog: About me"/>
+  <meta property="twitter:title" content="R some blog: R packages"/>
+  <meta property="twitter:description" content="R packages developed by me."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["About me"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["R packages"]},{"type":"character","attributes":{},"value":["R packages developed by me.\n"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2129,7 +2132,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About me","authors":[]}
+{"title":"R packages","description":"R packages developed by me.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2167,24 +2170,45 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About me</h1>
+<h1>R packages</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>R packages developed by me.</p></p>
 </div>
 
 
 <div class="d-article">
-<h3 id="about-me">👋 About me</h3>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
 <ul>
-<li>Hi, I’m Roman Pahl, studied computer science (2006) and researched in statistics and genetic epidemiology (PhD in 2014).</li>
-<li>Since 2015, I work at <a href="https://www.gsk.com/en-gb/about-us/vaccines/">GSK Vaccines</a> where I am currently developing statistical Software with application in Technical R&amp;D.</li>
+<li><a href="#container">container</a></li>
+<li><a href="#groupseq">GroupSeq</a></li>
 </ul>
-<h3 id="programming">💻 Programming</h3>
-<ul>
-<li>My main programming language is <a href="https://www.r-project.org/">R</a> with over 15 years of experience.</li>
-<li>I have also coded in C++ (e.g. see <a href="https://github.com/rpahl/permory">here</a>), Java and Python and recently started a bit on javascript.</li>
-</ul>
+</nav>
+</div>
+<h3 id="container">container</h3>
+<div>
+<p><a href="https://CRAN.R-project.org/package=container">container</a> provides an enhanced version of base R’s <code>list</code> with a carefully designed set of extract, replace, and remove operations that make it easier and safer to work with list-like data structures.</p>
+<p>Available on CRAN: <a href="https://CRAN.R-project.org/package=container" class="uri">https://CRAN.R-project.org/package=container</a>.</p>
+<p>Full documentation: <a href="https://rpahl.github.io/container/" class="uri">https://rpahl.github.io/container/</a></p>
+</div>
+<aside>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/container.png" width="100%" /></p>
+</div>
+</aside>
+<h3 id="groupseq">GroupSeq</h3>
+<div>
+<p><a href="https://CRAN.R-project.org/package=GroupSeq">GroupSeq</a> is a GUI-based tool for computing probabilities of Group Sequential designs, particularly, critical boundaries, power, drift, and confidence intervals.</p>
+<p>The numerical calculations are based on normally distributed test statistics and the so-called alpha spending approach by Lan-DeMets with various alpha spending functions being available to choose among.</p>
+<p>Available on CRAN: <a href="https://CRAN.R-project.org/package=GroupSeq" class="uri">https://CRAN.R-project.org/package=GroupSeq</a></p>
+</div>
+<aside>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/groupseq1.png" width="100%" /></p>
+</div>
+</aside>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

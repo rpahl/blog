@@ -6,6 +6,11 @@
     <atom:link href="https://rpahl.github.io/r-some-blog/index.xml" rel="self" type="application/rss+xml"/>
     <description>Some hopefully useful (or even awesome) stuff related to R programming.
 </description>
+    <image>
+      <title>R some blog</title>
+      <url>https://rpahl.github.io/r-some-blog/images/meatwork.jpg</url>
+      <link>https://rpahl.github.io/r-some-blog/</link>
+    </image>
     <generator>Distill</generator>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
     <item>
@@ -14,14 +19,20 @@
       <description>R Markdown provides the chunk option `ref.label` to 
 reuse chunks. In this post, I'll show potential problems with this approach
 and present an easy and safe alternative.</description>
+      <category>R-Markdown</category>
+      <category>knitr</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/ref-label</guid>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://rpahl.github.io/r-some-blog/posts/ref-label/distill-preview.png" medium="image" type="image/png" width="279" height="117"/>
     </item>
     <item>
       <title>Quicker knitr kables in RStudio notebook</title>
       <link>https://rpahl.github.io/r-some-blog/posts/kable_if</link>
       <description>In this post a simple RStudio hack is presented on how to display tables
 produced via knitr kable efficiently in the RStudio session.</description>
+      <category>R-Markdown</category>
+      <category>knitr</category>
+      <category>R-Studio</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/kable_if</guid>
       <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
       <media:content url="https://rpahl.github.io/r-some-blog/posts/kable_if/distill-preview.png" medium="image" type="image/png" width="670" height="468"/>
@@ -29,9 +40,9 @@ produced via knitr kable efficiently in the RStudio session.</description>
     <item>
       <title>My R Style Guide</title>
       <link>https://rpahl.github.io/r-some-blog/posts/r-style-guide</link>
-      <description>This is my take on an R style guide. As such, this is going to be a longer post.
-Still, I hope it - or at least some parts of it - are useful to some people out
-there.</description>
+      <description>This is my take on an R style guide. As such, this is going to be a longer 
+post in the hope that is useful to some people out there.</description>
+      <category>coding style</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/r-style-guide</guid>
       <pubDate>Sat, 16 Nov 2019 00:00:00 +0000</pubDate>
       <media:content url="https://rpahl.github.io/r-some-blog/posts/r-style-guide/distill-preview.png" medium="image" type="image/png" width="258" height="191"/>
@@ -43,6 +54,7 @@ there.</description>
 chance that you will share your code with people other than your future self.
 In this series of blog posts, I will present some (often underused) base R 
 functions for this purpose.</description>
+      <category>base R</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/readable-code-part1</guid>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       <media:content url="https://rpahl.github.io/r-some-blog/posts/readable-code-part1/distill-preview.png" medium="image" type="image/png" width="569" height="322"/>

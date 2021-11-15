@@ -91,6 +91,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <title>R some blog: Posts</title>
 
 
+  <link rel="icon" type="image/jpeg" href="images/meatwork.jpg"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -2057,16 +2058,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: 400;
     color: #404040;      
     position: relative;
-    background: #fff9d9;      
+    background: #FFFFE7;      
   }
 
-  /* Nav bar */
+
+  /* Nav bar background: #21130d;*/
 
   .distill-site-nav {
     color: #ffffff;
     background-color: #47aee9;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 350;
   }
 
 
@@ -2078,6 +2080,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .distill-site-nav a:hover {
     color: #d5eaf6;
   }
+
+
+  .nav-dropdown-content {
+    color: #21130d;
+    background: #FFFFE7;
+  }
+
 
   /* source code */
 
@@ -2108,6 +2117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-right: 10%;
   }
 
+
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -2129,12 +2139,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
 <a class="logo" href="https://github.com/rpahl">
-<img src="images/logo.jpg" alt="Logo"/>
+<img src="images/meatwork.jpg" alt="Logo"/>
 </a>
 <a href="index.html" class="title">R some blog</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
+<a href="r-packages.html">R packages</a>
+<a href="about.html">About Me</a>
 <a href="https://github.com/rpahl/r-some-blog">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
@@ -2291,24 +2303,27 @@ function init_posts_list() {
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Posts">Posts</h1>
 <a href="posts/ref-label/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["R-Markdown","knitr"]}</script>
 <div class="metadata">
 <div class="publishedDate">Aug. 8, 2020</div>
 <div class="dt-authors"></div>
 </div>
 <div class="thumbnail">
-<img/>
+<img src="posts/ref-label/distill-preview.png"/>
 </div>
 <div class="description">
 <h2>Why I don't use R Markdown's ref.label</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">R-Markdown</div>
+<div class="dt-tag">knitr</div>
+</div>
 <p>R Markdown provides the chunk option `ref.label` to 
 reuse chunks. In this post, I'll show potential problems with this approach
 and present an easy and safe alternative.</p>
 </div>
 </a>
 <a href="posts/kable_if/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["R-Markdown","knitr","R-Studio"]}</script>
 <div class="metadata">
 <div class="publishedDate">Nov. 17, 2019</div>
 <div class="dt-authors"></div>
@@ -2318,13 +2333,17 @@ and present an easy and safe alternative.</p>
 </div>
 <div class="description">
 <h2>Quicker knitr kables in RStudio notebook</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">R-Markdown</div>
+<div class="dt-tag">knitr</div>
+<div class="dt-tag">R-Studio</div>
+</div>
 <p>In this post a simple RStudio hack is presented on how to display tables
 produced via knitr kable efficiently in the RStudio session.</p>
 </div>
 </a>
 <a href="posts/r-style-guide/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["coding style"]}</script>
 <div class="metadata">
 <div class="publishedDate">Nov. 16, 2019</div>
 <div class="dt-authors"></div>
@@ -2334,14 +2353,15 @@ produced via knitr kable efficiently in the RStudio session.</p>
 </div>
 <div class="description">
 <h2>My R Style Guide</h2>
-<div class="dt-tags"></div>
-<p>This is my take on an R style guide. As such, this is going to be a longer post.
-Still, I hope it - or at least some parts of it - are useful to some people out
-there.</p>
+<div class="dt-tags">
+<div class="dt-tag">coding style</div>
+</div>
+<p>This is my take on an R style guide. As such, this is going to be a longer 
+post in the hope that is useful to some people out there.</p>
 </div>
 </a>
 <a href="posts/readable-code-part1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["base R"]}</script>
 <div class="metadata">
 <div class="publishedDate">July 30, 2018</div>
 <div class="dt-authors"></div>
@@ -2351,7 +2371,9 @@ there.</p>
 </div>
 <div class="description">
 <h2>Readable code with base R (part 1)</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">base R</div>
+</div>
 <p>Producing readable R code is of great importance, especially if there is a 
 chance that you will share your code with people other than your future self.
 In this series of blog posts, I will present some (often underused) base R 
@@ -2369,6 +2391,35 @@ functions for this purpose.</p>
 <div class="sidebar-section custom">
 Posts also available at: <a href="https://www.r-bloggers.com/">R-bloggers</a>
 </div>
+</div>
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:Articles">Articles</a>
+<span class="category-count">(4)</span>
+</li>
+<li>
+<a href="#category:base_R">base R</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:coding_style">coding style</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:knitr">knitr</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:R-Markdown">R-Markdown</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:R-Studio">R-Studio</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="posts-more">
@@ -2403,8 +2454,7 @@ Posts also available at: <a href="https://www.r-bloggers.com/">R-bloggers</a>
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
 <div>
-Some hopefully useful (or even awesome) stuff related to
-  <a href="https://www.r-project.org/">R</a> programming.
+Roman Pahl • https://rpahl.github.io/
 </div>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
