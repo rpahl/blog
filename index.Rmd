@@ -1,5 +1,7 @@
 ---
-title: "Posts"
+title: "R some blog"
+description: |
+  Some hopefully useful (or even awesome) stuff related to R programming.
 site: distill::distill_website
 listing: posts
 ---
