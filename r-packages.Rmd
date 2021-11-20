@@ -8,22 +8,24 @@ output:
 ---
 
 ### container
-
 <div>
 [container](https://CRAN.R-project.org/package=container) 
 provides an enhanced version of base R's `list` with a
 carefully designed set of extract, replace, and remove operations that make
 it easier and safer to work with list-like data structures.
 
-Available on CRAN: https://CRAN.R-project.org/package=container.
-
 Full documentation: https://rpahl.github.io/container/
+
+<a href="https://CRAN.R-project.org/package=container" style="border:0">
+<i class="fab fa-r-project" aria-hidden="true"></i>
+</a>
+<a href="https://github.com/rpahl/container" style="border:0">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
 </div>
 
 <aside>
-```{r out.width = '100%', echo = FALSE}
-knitr::include_graphics("images/container.png")
-```
+<a href="https://CRAN.R-project.org/package=container"><img src="images/container.png" alt="VO2Max app" style="width:100%"></a>
 </aside>
 
 ### GroupSeq
@@ -38,14 +40,16 @@ The numerical calculations are based on normally distributed
 test statistics and the so-called alpha spending approach by Lan-DeMets with 
 various alpha spending functions being available to choose among.
 
-Available on CRAN: https://CRAN.R-project.org/package=GroupSeq
+<a href="https://CRAN.R-project.org/package=GroupSeq" style="border:0">
+<i class="fab fa-r-project" aria-hidden="true"></i>
+</a>
+<a href="https://github.com/rpahl/GroupSeq" style="border:0">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
 </div>
 
-<aside>
-```{r out.width = '100%', echo = FALSE}
-knitr::include_graphics("images/groupseq1.png")
-```
+<aside class = "centered">
+<a href="https://CRAN.R-project.org/package=GroupSeq"><img src="images/groupseq1.png" alt="VO2Max app" style="width:100%"></a>
 </aside>
-
 
 

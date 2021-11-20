@@ -8,6 +8,7 @@ description: |
 date: 07-30-2018
 categories:
   - base R
+  - coding style
 output:
   distill::distill_article:
     highlight: zenburn

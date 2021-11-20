@@ -57,11 +57,12 @@
     "author": [],
     "date": "2018-07-30",
     "categories": [
-      "base R"
+      "base R",
+      "coding style"
     ],
     "contents": "\r\n\r\n\r\n\r\nIn this post, we cover startsWith, endsWith, and Filter.\r\nstartsWith and endsWith for string-matching\r\nThere are special base functions for pre- or postfix matching.\r\n\r\n\r\n# Basic usage:\r\nw <- \"Hello World!\"\r\nstartsWith(w, \"Hell\")\r\n\r\n\r\n[1] TRUE\r\n\r\nstartsWith(w, \"Helo\")\r\n\r\n\r\n[1] FALSE\r\n\r\nendsWith(w, \"!\")\r\n\r\n\r\n[1] TRUE\r\n\r\nOf course, it also works with vectors. Can’t remember the exact name of a base function? Try this… ;)\r\n\r\n\r\nbase_funcs <- ls(\"package:base\")\r\n\r\nbase_funcs[startsWith(base_funcs, \"row\")]\r\n\r\n\r\n [1] \"row\"                    \"row.names\"             \r\n [3] \"row.names.data.frame\"   \"row.names.default\"     \r\n [5] \"row.names<-\"            \"row.names<-.data.frame\"\r\n [7] \"row.names<-.default\"    \"rowMeans\"              \r\n [9] \"rownames\"               \"rownames<-\"            \r\n[11] \"rowsum\"                 \"rowsum.data.frame\"     \r\n[13] \"rowsum.default\"         \"rowSums\"               \r\n\r\nThe ‘readable’ property really shines when combined with control-flow.\r\n\r\n\r\ntell_file_type <- function(fn) {\r\n    # Check different file endings\r\n    if (endsWith(fn, \"txt\")) {\r\n        print(\"A text file.\")\r\n    }\r\n    if (any(endsWith(fn, c(\"xlsx\", \"xls\")))) {\r\n        print(\"An Excel file.\")\r\n    }\r\n}\r\ntell_file_type(\"A.txt\")\r\n\r\n\r\n[1] \"A text file.\"\r\n\r\ntell_file_type(\"B.xls\")\r\n\r\n\r\n[1] \"An Excel file.\"\r\n\r\nThe resulting code reads very well.\r\nFilter\r\nUsing another nice base function, Filter, the above code can be further improved.\r\n\r\n\r\nget_file_type <- function(fn) {\r\n  file_endings <- c(text=\"txt\", Excel=\"xls\", Excel=\"xlsx\")  \r\n  Filter(file_endings, f = function(x) endsWith(fn, x))\r\n}\r\n\r\nget_file_type(\"C.xlsx\")\r\n\r\n\r\n Excel \r\n\"xlsx\" \r\n\r\nAgain, very readable to my eyes. It should be noted that for this particular problem using tools::file_ext is even more appropriate, but I think the point has been made.\r\nLast but not least, since Filter works on lists, you can use it on a data.frame as well.\r\n\r\n\r\ndat <- data.frame(A=1:3, B=5:3, L=letters[1:3])\r\ndat\r\n\r\n\r\n  A B L\r\n1 1 5 a\r\n2 2 4 b\r\n3 3 3 c\r\n\r\nFilter(dat, f = is.numeric)\r\n\r\n\r\n  A B\r\n1 1 5\r\n2 2 4\r\n3 3 3\r\n\r\nFilter(dat, f = Negate(is.numeric))  # or Filter(dat, f = function(x) !is.numeric(x))\r\n\r\n\r\n  L\r\n1 a\r\n2 b\r\n3 c\r\n\r\nThat’s it for now - see you in part 2.\r\n\r\n\r\n\r\n",
     "preview": "posts/readable-code-part1/distill-preview.png",
-    "last_modified": "2021-11-15T00:13:48+01:00",
+    "last_modified": "2021-11-17T19:42:40+01:00",
     "input_file": {},
     "preview_width": 569,
     "preview_height": 322
