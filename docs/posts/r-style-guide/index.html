@@ -46,42 +46,46 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
 div.sourceCode
-  { color: #cccccc; background-color: #303030; }
+  { color: #1f1c1b; background-color: #ffffff; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ffcfaf; } /* Alert */
-code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #dca3a3; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #f0dfaf; } /* ControlFlow */
-code span.ch { color: #dca3a3; } /* Char */
-code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
-code span.co { color: #7f9f7f; } /* Comment */
-code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
-code span.do { color: #7f9f7f; } /* Documentation */
-code span.dt { color: #dfdfbf; } /* DataType */
-code span.dv { color: #dcdccc; } /* DecVal */
-code span.er { color: #c3bf9f; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #c0bed1; } /* Float */
-code span.fu { color: #efef8f; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
-code span.kw { color: #f0dfaf; } /* Keyword */
-code span.op { color: #f0efd0; } /* Operator */
-code span.ot { color: #efef8f; } /* Other */
-code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
-code span.sc { color: #dca3a3; } /* SpecialChar */
-code span.ss { color: #cc9393; } /* SpecialString */
-code span.st { color: #cc9393; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #cc9393; } /* VerbatimString */
-code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+code span { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
 </style>
 
 
@@ -122,7 +126,7 @@ code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["My R Style Guide"]},{"type":"character","attributes":{},"value":["This is my take on an R style guide. As such, this is going to be a longer \npost in the hope that is useful to some people out there."]},{"type":"character","attributes":{},"value":["11-16-2019"]},{"type":"character","attributes":{},"value":["coding style"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["theme","toc","highlight"]}},"value":[{"type":"character","attributes":{},"value":["article"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["zenburn"]}]}]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/r-style-guide/"]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/r-style-guide/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["My R Style Guide"]},{"type":"character","attributes":{},"value":["This is my take on an R style guide. As such, this is going to be a longer \npost in the hope that is useful to some people out there."]},{"type":"character","attributes":{},"value":["11-16-2019"]},{"type":"character","attributes":{},"value":["coding style"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["theme","toc","highlight"]}},"value":[{"type":"character","attributes":{},"value":["article"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["kate"]}]}]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/r-style-guide/"]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/r-style-guide/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2075,9 +2079,9 @@ body {
   font-family: Roboto, 'Libre Baskerville', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  color: #404040;      
+  color: #404040;
   position: relative;
-  background: #FFFFE7;      
+  background: #FFFFE7;
 }
 
 
@@ -2110,8 +2114,11 @@ body {
 /* source code */
 
 d-article div.sourceCode pre {
-  color: #ecede4;
-  background-color: #414243;
+  color: #073642;
+  background-color: #fdf6e3;
+  border: 1pt solid #eee8d5;
+  padding: 1em;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
 }
 
 /* sidebar on front page with category listing */
@@ -2124,7 +2131,7 @@ d-article div.sourceCode pre {
   padding-bottom: 24px;
 }
 
-/* attempt to make result not so wide/spacious */ 
+/* attempt to make result not so wide/spacious */
 
 .posts-with-sidebar .posts-list {
   width: 66%;
@@ -2325,9 +2332,11 @@ d-article div.sourceCode pre {
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rnorm <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (unnecessary_long_variable_name <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="fu">print</span>(unnecessary_long_variable_name)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(a1, x7) a1 <span class="sc">+</span> x7</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>rnorm <span class="ot">&lt;-</span> <span class="cf">function</span>(m, <span class="at">n =</span> <span class="dv">0</span>, <span class="at">o =</span> <span class="dv">1</span>)</span></code></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (unnecessary_long_variable_name <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(unnecessary_long_variable_name)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(a1, x7) a1 <span class="sc">+</span> x7</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>rnorm <span class="ot">&lt;-</span> <span class="cf">function</span>(m, <span class="at">n =</span> <span class="dv">0</span>, <span class="at">o =</span> <span class="dv">1</span>)</span></code></pre></div>
 </div>
 <h3 id="function-definitions">Function definitions</h3>
 <p>Function definitions first list arguments without default values, followed by those with default values. In both function definitions and function calls, multiple arguments per line are allowed; line breaks are only allowed between assignments.</p>
@@ -2339,8 +2348,8 @@ d-article div.sourceCode pre {
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">log.p=</span><span class="cn">FALSE</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>, n)           <span class="co"># n should be listed first</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>pnorm <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>, <span class="at">lower.tail=</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>mean <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>, n)                   <span class="co"># n should be listed first</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>pnorm <span class="ot">&lt;-</span> <span class="cf">function</span>(q, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>, <span class="at">lower.tail=</span>      <span class="co"># don&#39;t break line here</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                  <span class="cn">TRUE</span>, <span class="at">log.p=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <h3 id="function-calls">Function calls</h3>
@@ -2380,24 +2389,25 @@ d-article div.sourceCode pre {
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">main =</span> main, <span class="at">limit =</span> limit, <span class="at">circle =</span> circle)</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">colors =</span> <span class="fu">plot_colors</span>(), <span class="at">linetype =</span> <span class="fu">plot_linetypes</span>()) { ... }</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">colors =</span> <span class="fu">plot_colors</span>(), </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                    <span class="at">linetype =</span> <span class="fu">plot_linetypes</span>()) { ... }</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, </span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                   <span class="at">color.bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">color.fg =</span> <span class="st">&quot;green&quot;</span>, <span class="at">color.line =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>                   <span class="at">linetype.main =</span> <span class="dv">1</span>, <span class="at">linetype.limit =</span> <span class="dv">2</span>, <span class="at">linetype.circle =</span> <span class="dv">3</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>{ ... }</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Even worse</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">cl.bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cl.fg =</span> <span class="st">&quot;green&quot;</span>, <span class="at">cl.l =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lt.m =</span> <span class="dv">1</span>, <span class="at">lt.l =</span> <span class="dv">2</span>, <span class="at">lt.c =</span> <span class="dv">3</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>{ ... }</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Very bad</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>my_fit_and_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(formula, data, sub, w, na.action, method,</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>                            x, y, <span class="at">cl.bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cl.fg =</span> <span class="st">&quot;green&quot;</span>,</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>                            <span class="at">cl.l =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lt.m =</span> <span class="dv">1</span>, <span class="at">lt.l =</span> <span class="dv">2</span>, <span class="at">lt.c =</span> <span class="dv">3</span>)</span></code></pre></div>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># BAD</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>                   <span class="at">color.bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">color.fg =</span> <span class="st">&quot;green&quot;</span>, <span class="at">color.line =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>                   <span class="at">linetype.main =</span> <span class="dv">1</span>, <span class="at">linetype.limit =</span> <span class="dv">2</span>, <span class="at">linetype.circle =</span> <span class="dv">3</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>{ ... }</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Even worse</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">cl.bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cl.fg =</span> <span class="st">&quot;green&quot;</span>, <span class="at">cl.l =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>                    <span class="at">lt.m =</span> <span class="dv">1</span>, <span class="at">lt.l =</span> <span class="dv">2</span>, <span class="at">lt.c =</span> <span class="dv">3</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>{ ... }</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Very bad</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>my_fit_and_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(formula, data, sub, w, na.action, method,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>                            x, y, <span class="at">cl.bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cl.fg =</span> <span class="st">&quot;green&quot;</span>,</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>                            <span class="at">cl.l =</span> <span class="st">&quot;black&quot;</span>, <span class="at">lt.m =</span> <span class="dv">1</span>, <span class="at">lt.l =</span> <span class="dv">2</span>, <span class="at">lt.c =</span> <span class="dv">3</span>)</span></code></pre></div>
 </div>
 <h2 id="syntax">Syntax</h2>
 <h3 id="assignment">Assignment</h3>
@@ -2625,7 +2635,7 @@ d-article div.sourceCode pre {
 [4] &quot;package:grDevices&quot; &quot;package:utils&quot;     &quot;package:datasets&quot; 
 [7] &quot;package:methods&quot;   &quot;Autoloads&quot;         &quot;package:base&quot;     </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fu">file_ext</span><span class="op">(</span><span class="st">&quot;test.txt&quot;</span><span class="op">)</span>            <span class="co"># and thus produces an error if called without namespace prefix</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="fu">file_ext</span><span class="op">(</span><span class="st">&quot;test.txt&quot;</span><span class="op">)</span>  <span class="co"># and thus gives error if called without namespace prefix</span>
 </code></pre>
 </div>
 <pre><code>Error in file_ext(&quot;test.txt&quot;): could not find function &quot;file_ext&quot;</code></pre>
@@ -2635,12 +2645,12 @@ d-article div.sourceCode pre {
 <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span>
 </code></pre>
 </div>
-<pre><code>[1] -0.8121558</code></pre>
+<pre><code>[1] -0.557744</code></pre>
 </div>
 <p>In contrast, the <code>library</code> and <code>require</code> commands both load the package’s namespace but also attach its namespace to the search path, which allows to refer to functions of the package without using the <code>::</code> operator.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tools</span><span class="op">)</span>                  <span class="co"># loads namespace and attaches it to search path</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">tools</span><span class="op">)</span>                <span class="co"># loads namespace and attaches it to search path</span>
 <span class="fu"><a href="https://rdrr.io/r/base/search.html">search</a></span><span class="op">(</span><span class="op">)</span>
 </code></pre>
 </div>
@@ -2649,7 +2659,7 @@ d-article div.sourceCode pre {
  [7] &quot;package:datasets&quot;  &quot;package:methods&quot;   &quot;Autoloads&quot;        
 [10] &quot;package:base&quot;     </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fu"><a href="https://rdrr.io/r/tools/fileutils.html">file_ext</a></span><span class="op">(</span><span class="st">&quot;test.txt&quot;</span><span class="op">)</span>            <span class="co"># now works</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="fu"><a href="https://rdrr.io/r/tools/fileutils.html">file_ext</a></span><span class="op">(</span><span class="st">&quot;test.txt&quot;</span><span class="op">)</span>          <span class="co"># now works</span>
 </code></pre>
 </div>
 <pre><code>[1] &quot;txt&quot;</code></pre>

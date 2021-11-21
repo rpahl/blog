@@ -2059,9 +2059,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-family: Roboto, 'Libre Baskerville', sans-serif;
     font-size: 20px;
     font-weight: 400;
-    color: #404040;      
+    color: #404040;
     position: relative;
-    background: #FFFFE7;      
+    background: #FFFFE7;
   }
 
 
@@ -2094,8 +2094,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* source code */
 
   d-article div.sourceCode pre {
-    color: #ecede4;
-    background-color: #414243;
+    color: #073642;
+    background-color: #fdf6e3;
+    border: 1pt solid #eee8d5;
+    padding: 1em;
+    box-shadow: 5pt 5pt 8pt #eee8d5;
   }
 
   /* sidebar on front page with category listing */
@@ -2108,7 +2111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-bottom: 24px;
   }
 
-  /* attempt to make result not so wide/spacious */ 
+  /* attempt to make result not so wide/spacious */
 
   .posts-with-sidebar .posts-list {
     width: 66%;
@@ -2306,6 +2309,27 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="R some blog">R some blog</h1>
+<a href="posts/container1.0/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["R package","container"]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 21, 2021</div>
+<div class="dt-authors"></div>
+</div>
+<div class="thumbnail">
+<img src="posts/container1.0/distill-preview.png"/>
+</div>
+<div class="description">
+<h2>container: v1.0.0 on CRAN</h2>
+<div class="dt-tags">
+<div class="dt-tag">R package</div>
+<div class="dt-tag">container</div>
+</div>
+<p>The update contains some breaking changes and brings a lot of new features
+and operators, which markedly improves using containers in both 
+interactive R sessions and code development.
+Also there is a new class dict.table to support the data.table package.</p>
+</div>
+</a>
 <a href="posts/ref-label/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["R-Markdown","knitr"]}</script>
 <div class="metadata">
@@ -2402,7 +2426,7 @@ Posts also available at: <a href="https://www.r-bloggers.com/">R-bloggers</a>
 <ul>
 <li>
 <a href="#category:Articles">Articles</a>
-<span class="category-count">(4)</span>
+<span class="category-count">(5)</span>
 </li>
 <li>
 <a href="#category:base_R">base R</a>
@@ -2411,6 +2435,10 @@ Posts also available at: <a href="https://www.r-bloggers.com/">R-bloggers</a>
 <li>
 <a href="#category:coding_style">coding style</a>
 <span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:container">container</a>
+<span class="category-count">(1)</span>
 </li>
 <li>
 <a href="#category:knitr">knitr</a>
@@ -2422,6 +2450,10 @@ Posts also available at: <a href="https://www.r-bloggers.com/">R-bloggers</a>
 </li>
 <li>
 <a href="#category:R-Studio">R-Studio</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:R_package">R package</a>
 <span class="category-count">(1)</span>
 </li>
 </ul>

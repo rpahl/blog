@@ -10,7 +10,7 @@ output:
   distill::distill_article:
     theme: article
     toc: true
-    highlight: zenburn
+    highlight: kate
 ---
 
 
@@ -141,7 +141,9 @@ add <- function(a, b) a + b
 rnorm <- function(n, mean = 0, sd = 1)
 
 # BAD
-for (unnecessary_long_variable_name in 1:10) print(unnecessary_long_variable_name)
+for (unnecessary_long_variable_name in 1:10) {
+  print(unnecessary_long_variable_name)
+}
 add <- function(a1, x7) a1 + x7
 rnorm <- function(m, n = 0, o = 1)
 ```
@@ -160,8 +162,8 @@ pnorm <- function(q, mean=0, sd=1,
                   log.p=FALSE)
 
 # BAD
-mean <- function(mean=0, sd=1, n)           # n should be listed first
-pnorm <- function(q, mean=0, sd=1, lower.tail=
+mean <- function(mean=0, sd=1, n)                   # n should be listed first
+pnorm <- function(q, mean=0, sd=1, lower.tail=      # don't break line here
                   TRUE, log.p=FALSE)
 ```
 
@@ -211,7 +213,8 @@ plot_linetypes <- function(main = 1, limit = 2, circle = 3) {
     list(main = main, limit = limit, circle = circle)
 }
 
-my_plot <- function(x, y, colors = plot_colors(), linetype = plot_linetypes()) { ... }
+my_plot <- function(x, y, colors = plot_colors(), 
+                    linetype = plot_linetypes()) { ... }
 
 
 # BAD
@@ -509,7 +512,7 @@ loaded but not attached to the search path.
 ```{r, eval=TRUE, error=TRUE}
 tools::file_ext("test.txt")     # loads the namespace of the 'tools' package,
 search()                        # but does not attach it to the search path
-file_ext("test.txt")            # and thus produces an error if called without namespace prefix
+file_ext("test.txt")  # and thus gives error if called without namespace prefix
 
 # base::mean and stats::rnorm work, because base and stats namespaces are
 # loaded and attached by default:
@@ -521,9 +524,9 @@ namespace but also attach its namespace to the search path, which
 allows to refer to functions of the package without using the `::` operator.
 
 ```{r, eval=TRUE}
-library(tools)                  # loads namespace and attaches it to search path
+library(tools)                # loads namespace and attaches it to search path
 search()
-file_ext("test.txt")            # now works
+file_ext("test.txt")          # now works
 ```
 
 Since a call to a function shall not alter the search path, `library` or 

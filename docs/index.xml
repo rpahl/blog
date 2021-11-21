@@ -12,7 +12,20 @@
       <link>https://rpahl.github.io/r-some-blog/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>container: v1.0.0 on CRAN</title>
+      <link>https://rpahl.github.io/r-some-blog/posts/container1.0</link>
+      <description>The update contains some breaking changes and brings a lot of new features
+and operators, which markedly improves using containers in both 
+interactive R sessions and code development.
+Also there is a new class dict.table to support the data.table package.</description>
+      <category>R package</category>
+      <category>container</category>
+      <guid>https://rpahl.github.io/r-some-blog/posts/container1.0</guid>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://rpahl.github.io/r-some-blog/posts/container1.0/distill-preview.png" medium="image" type="image/png" width="602" height="415"/>
+    </item>
     <item>
       <title>Why I don't use R Markdown's ref.label</title>
       <link>https://rpahl.github.io/r-some-blog/posts/ref-label</link>

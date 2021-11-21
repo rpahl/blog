@@ -11,7 +11,7 @@ categories:
   - coding style
 output:
   distill::distill_article:
-    highlight: zenburn
+    highlight: kate
 ---
 
 ```{r setup, include=FALSE}
