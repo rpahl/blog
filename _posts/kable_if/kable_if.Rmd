@@ -10,7 +10,7 @@ categories:
   - R-Studio
 output:
   distill::distill_article:
-    highlight: zenburn
+    highlight: kate
 ---
 
 
