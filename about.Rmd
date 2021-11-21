@@ -2,7 +2,14 @@
 title: "About me"
 ---
 
-### 👋 About me
+
+```{r out.width='20%', echo=FALSE}
+knitr::include_graphics("images/rpahl-github-circle-edit.png")
+```
+
+
+### 👋 About me 
+
 * I studied computer science (2006) and did research in 
 the field of statistics and genetic epidemiology (PhD in 2014).
 * Since 2015, I work at 
@@ -17,3 +24,6 @@ currently developing statistical software with applications in Technical R&D.
 years of experience.
 * I also coded in C++ (e.g. see [here](https://github.com/rpahl/permory)), 
 Java and Python and recently started coding in Javascript.
+
+
+

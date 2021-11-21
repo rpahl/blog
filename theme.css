@@ -13,7 +13,7 @@ body {
 }
 
 
-/* Nav bar background: #21130d;*/
+/* Nav bar background: */
 
 .distill-site-nav {
   color: #ffffff;
@@ -59,15 +59,15 @@ d-article div.sourceCode pre {
   padding-bottom: 24px;
 }
 
-/* attempt to make result not so wide/spacious */
 
 .posts-with-sidebar .posts-list {
-  width: 66%;
-  margin-left: 11%;
+  width: 70%;
+  margin-left: 5%;
 }
 
 .posts-sidebar {
   font-size: 75%;
   margin-right: 10%;
 }
+
 
