@@ -8,8 +8,10 @@ description: |
   
 date: 11-21-2021
 categories:
-  - R package
   - container
+  - list
+  - R package
+  
 output:
   distill::distill_article:
     toc: true
