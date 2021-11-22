@@ -2,16 +2,16 @@
 title: "container: v1.0.0 on CRAN"
 description: |
   The update contains some breaking changes and brings a lot of new features
-  and operators, which markedly improves using containers in both 
+  and operators, which markedly improves using containers in both
   interactive R sessions and code development.
   Also there is a new class dict.table to support the data.table package.
-  
+
 date: 11-21-2021
 categories:
   - container
   - list
   - R package
-  
+
 output:
   distill::distill_article:
     toc: true
@@ -29,10 +29,10 @@ library(container)
 ### What is `container`?
 
 <div>
-A container can be considered an enhanced version of base R's list with a 
-carefully designed set of extract, replace, and remove operations that make it 
-easier and safer to work with list-like data structures, be it in interactive R
-sessions or especially when developing critical code or packages.
+A container can be considered as an enhanced version of base R's list with a
+carefully designed set of extract, replace, and remove operations.
+They enable an easier and safer way to work with list-like data structures
+in interactive R sessions and in particular when developing critical code.
 </div>
 
 <aside>
@@ -43,7 +43,7 @@ knitr::include_graphics("container.png")
 </aside>
 
 This blog post can only provide a glimpse of all the things you can do with
-containers so here we focus on some features suitable for
+containers so here the focus is on some features suitable for
 *interactive* R sessions.
 
 
@@ -91,16 +91,16 @@ print(li)
 
 :::::
 
-As you see the container by default prints very compact. Next, take a look
+As you can see the container by default prints very compact. Next, take a look
 at data extraction.
 
 
 ### Extract
 
-A container provides all familiar extract operations known from base 
-R list, but also some new operations to make life (hopefully) easier. 
-Also note that in contrast to base R list,
-undefined indices are ignored and thus don't produce `NULL` values. 
+A container provides all familiar extract operations known from base
+R lists but also some new operations to make life (hopefully) easier.
+In contrast to base R lists,
+undefined indices are ignored and thus do not produce `NULL` values.
 
 ::::: {.panelset}
 
@@ -135,8 +135,8 @@ li[1, "data", 2, "foo"]  # not supported
 
 ### Replace
 
-Similarly, a container provides both standard and new 
-ways for interactive element replacement.
+In the same way, a container provides both familiar and new
+operations for interactive element replacement.
 
 ::::: {.panelset}
 
@@ -191,5 +191,5 @@ li[list("colors", 2)] <- list("blue", 1:4)   # not supported
 :::::
 
 
-To see the full official documentation, please visit
-[https://rpahl.github.io/container/](https://rpahl.github.io/container/index.html). 
+To see the full official documentation, visit
+[https://rpahl.github.io/container/](https://rpahl.github.io/container/index.html).
