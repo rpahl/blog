@@ -1,14 +1,14 @@
 ---
-title: "About me"
+title: About me
 ---
 
 
 ```{r out.width='20%', echo=FALSE}
-knitr::include_graphics("images/rpahl-github-circle-edit.png")
+knitr::include_graphics("images/meatwork-toon-close.jpg")
 ```
 
 
-### 👋 About me 
+### 🎓 Education 
 
 * I studied computer science (2006) and did research in 
 the field of statistics and genetic epidemiology (PhD in 2014).

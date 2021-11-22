@@ -3,10 +3,10 @@ title: "R some blog"
 description: |
   Some hopefully useful (or even awesome) stuff related to R programming.
 output_dir: "docs"
-favicon: images/rpahl-github-circle-edit.png
+favicon: images/meatwork-toon-close.jpg
 navbar:
   logo:
-    image: images/rpahl-github-circle-edit.png
+    image: images/meatwork-toon-close.jpg
     href: https://github.com/rpahl
   right:
     - text: "R packages"
