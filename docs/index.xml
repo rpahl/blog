@@ -12,185 +12,19 @@
       <link>https://rpahl.github.io/r-some-blog/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>container: v1.0.0 on CRAN</title>
       <link>https://rpahl.github.io/r-some-blog/posts/container1.0</link>
-      <description>
-
-
-&lt;h3 id="what-is-container"&gt;What is &lt;code&gt;container&lt;/code&gt;?&lt;/h3&gt;
-&lt;div&gt;
-&lt;p&gt;A container can be considered as an enhanced version of base R’s list with a carefully designed set of extract, replace, and remove operations. They enable an easier and safer way to work with list-like data structures in interactive R sessions and in particular when developing critical code.&lt;/p&gt;
-&lt;/div&gt;
-&lt;aside&gt;
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/container1.0container.png" width="100%" /&gt;&lt;/p&gt;
-&lt;/aside&gt;
-&lt;p&gt;This blog post can only provide a glimpse of all the things you can do with containers so here the focus is on some features suitable for &lt;em&gt;interactive&lt;/em&gt; R sessions.&lt;/p&gt;
-&lt;h3 id="print"&gt;Print&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;library(container)
-
-co &amp;lt;- container(colors = c(&amp;quot;Red&amp;quot;, &amp;quot;Green&amp;quot;, &amp;quot;Blue&amp;quot;),
-                numbers = 1:10,
-                data = cars[1:10, ])&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let’s start by comparing the print output of container and list (click on the panels below).&lt;/p&gt;
-&lt;div class="panelset"&gt;
-&lt;div id="container" class="container-out panel"&gt;
-&lt;h3 class="container-out"&gt;container&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;print(co)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = (&amp;quot;Red&amp;quot; &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot;), numbers = (1L 2L 3L 4L ...),
- data = &amp;lt;&amp;lt;data.frame(10x2)&amp;gt;&amp;gt;]&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id="list" class="list-out panel"&gt;
-&lt;h3 class="list-out"&gt;list&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li = as.list(co)
-print(li)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;$colors
-[1] &amp;quot;Red&amp;quot;   &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot; 
-
-$numbers
- [1]  1  2  3  4  5  6  7  8  9 10
-
-$data
-   speed dist
-1      4    2
-2      4   10
-3      7    4
-4      7   22
-5      8   16
-6      9   10
-7     10   18
-8     10   26
-9     10   34
-10    11   17&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;As you can see the container by default prints very compact. Next, take a look at data extraction.&lt;/p&gt;
-&lt;h3 id="extract"&gt;Extract&lt;/h3&gt;
-&lt;p&gt;A container provides all familiar extract operations known from base R lists but also some new operations to make life (hopefully) easier. In contrast to base R lists, undefined indices are ignored and thus do not produce &lt;code&gt;NULL&lt;/code&gt; values.&lt;/p&gt;
-&lt;div class="panelset"&gt;
-&lt;div id="container-1" class="container-out panel"&gt;
-&lt;h3 class="container-out"&gt;container&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[[1]]                  # standard&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[1] &amp;quot;Red&amp;quot;   &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot; &lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[2:3]                  # standard&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[numbers = (1L 2L 3L 4L ...), data = &amp;lt;&amp;lt;data.frame(10x2)&amp;gt;&amp;gt;]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[c(1:2, 5:8)]          # ignore undefined indices&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = (&amp;quot;Red&amp;quot; &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot;), numbers = (1L 2L 3L 4L ...)]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[1, 2, 5:8]            # pass any number of indices - same as before&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = (&amp;quot;Red&amp;quot; &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot;), numbers = (1L 2L 3L 4L ...)]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[1, &amp;quot;data&amp;quot;, 2, &amp;quot;foo&amp;quot;]  # index types can be mixed&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = (&amp;quot;Red&amp;quot; &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot;), data = &amp;lt;&amp;lt;data.frame(10x2)&amp;gt;&amp;gt;,
- numbers = (1L 2L 3L 4L ...)]&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id="list-1" class="list-out panel"&gt;
-&lt;h3 class="list-out"&gt;list&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[[1]]                  # standard&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[1] &amp;quot;Red&amp;quot;   &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot; &lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[2:3]                  # standard&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;$numbers
- [1]  1  2  3  4  5  6  7  8  9 10
-
-$data
-   speed dist
-1      4    2
-2      4   10
-3      7    4
-4      7   22
-5      8   16
-6      9   10
-7     10   18
-8     10   26
-9     10   34
-10    11   17&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[c(1:2, 5:8)]          # pad NULLs for undefined indices&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;$colors
-[1] &amp;quot;Red&amp;quot;   &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot; 
-
-$numbers
- [1]  1  2  3  4  5  6  7  8  9 10
-
-$&amp;lt;NA&amp;gt;
-NULL
-
-$&amp;lt;NA&amp;gt;
-NULL
-
-$&amp;lt;NA&amp;gt;
-NULL
-
-$&amp;lt;NA&amp;gt;
-NULL&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[1, 2, 5:8]            # not supported&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Error in li[1, 2, 5:8]: incorrect number of dimensions&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[1, &amp;quot;data&amp;quot;, 2, &amp;quot;foo&amp;quot;]  # not supported&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Error in li[1, &amp;quot;data&amp;quot;, 2, &amp;quot;foo&amp;quot;]: incorrect number of dimensions&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id="replace"&gt;Replace&lt;/h3&gt;
-&lt;p&gt;In the same way, a container provides both familiar and new operations for interactive element replacement.&lt;/p&gt;
-&lt;div class="panelset"&gt;
-&lt;div id="container-2" class="container-out panel"&gt;
-&lt;h3 class="container-out"&gt;container&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[2:3] &amp;lt;- NA                                # standard
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = (&amp;quot;Red&amp;quot; &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot;), numbers = NA, data = NA]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[[1]] &amp;lt;- &amp;quot;&amp;quot;                                # standard
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = &amp;quot;&amp;quot;, numbers = NA, data = NA]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[[&amp;quot;colors&amp;quot;]] &amp;lt;- &amp;quot;red&amp;quot;                      # standard
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = &amp;quot;red&amp;quot;, numbers = NA, data = NA]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[list(&amp;quot;colors&amp;quot;, 2)] &amp;lt;- list(&amp;quot;blue&amp;quot;, 1:4)   # mixed indices
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = &amp;quot;blue&amp;quot;, numbers = (1L 2L 3L 4L), data = NA]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[[{&amp;quot;blue&amp;quot;}]] &amp;lt;- &amp;quot;green&amp;quot;                    # replace by value
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = &amp;quot;green&amp;quot;, numbers = (1L 2L 3L 4L), data = NA]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;co[[{NA}]] &amp;lt;- 0                              # replace by value
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = &amp;quot;green&amp;quot;, numbers = (1L 2L 3L 4L), data = 0]&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id="list-2" class="list-out panel"&gt;
-&lt;h3 class="list-out"&gt;list&lt;/h3&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[2:3] &amp;lt;- NA                                # standard
-li&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;$colors
-[1] &amp;quot;Red&amp;quot;   &amp;quot;Green&amp;quot; &amp;quot;Blue&amp;quot; 
-
-$numbers
-[1] NA
-
-$data
-[1] NA&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[[1]] &amp;lt;- &amp;quot;&amp;quot;                                # standard
-li&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;$colors
-[1] &amp;quot;&amp;quot;
-
-$numbers
-[1] NA
-
-$data
-[1] NA&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[[&amp;quot;colors&amp;quot;]] &amp;lt;- &amp;quot;red&amp;quot;                      # standard
-co&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[colors = &amp;quot;green&amp;quot;, numbers = (1L 2L 3L 4L), data = 0]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;li[list(&amp;quot;colors&amp;quot;, 2)] &amp;lt;- list(&amp;quot;blue&amp;quot;, 1:4)   # not supported&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Error in li[list(&amp;quot;colors&amp;quot;, 2)] &amp;lt;- list(&amp;quot;blue&amp;quot;, 1:4): invalid subscript type &amp;#39;list&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class="r"&gt;&lt;code&gt;#li[[{&amp;quot;blue&amp;quot;}]] &amp;lt;- &amp;quot;green&amp;quot;                   # not supported
-
-#li[[{NA}]] &amp;lt;- 0                             # not supported&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;To see the full official documentation, visit &lt;a href="https://rpahl.github.io/container/index.html"&gt;https://rpahl.github.io/container/&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <distill:md5>d7223ab21afd9229a1eb3a48f7d61da2</distill:md5>
+      <description>The update contains some breaking changes and brings a lot of new features
+and operators, which markedly improves using containers in both
+interactive R sessions and code development.
+Also there is a new class dict.table to support the data.table package.</description>
       <category>container</category>
       <category>list</category>
       <category>R package</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/container1.0</guid>
-      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
       <media:content url="https://rpahl.github.io/r-some-blog/posts/container1.0/distill-preview.png" medium="image" type="image/png" width="602" height="415"/>
     </item>
     <item>
