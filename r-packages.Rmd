@@ -25,7 +25,7 @@ Full documentation: https://rpahl.github.io/container/
 </div>
 
 <aside>
-<a href="https://CRAN.R-project.org/package=container"><img src="images/container.png" alt="VO2Max app" style="width:100%"></a>
+<a href="https://rpahl.github.io/container/"><img src="images/container.png" alt="container" style="width:100%"></a>
 </aside>
 
 ### GroupSeq
@@ -40,6 +40,8 @@ The numerical calculations are based on normally distributed
 test statistics and the so-called alpha spending approach by Lan-DeMets with 
 various alpha spending functions being available to choose among.
 
+Full documentation: https://rpahl.github.io/GroupSeq/
+
 <a href="https://CRAN.R-project.org/package=GroupSeq" style="border:0">
 <i class="fab fa-r-project" aria-hidden="true"></i>
 </a>
@@ -49,7 +51,6 @@ various alpha spending functions being available to choose among.
 </div>
 
 <aside class = "centered">
-<a href="https://CRAN.R-project.org/package=GroupSeq"><img src="images/groupseq1.png" alt="VO2Max app" style="width:100%"></a>
+<a href="https://rpahl.github.io/GroupSeq/"><img src="images/GroupSeqLogo3D.png" alt="GroupSeq" style="width:100%"></a>
 </aside>
-
 
