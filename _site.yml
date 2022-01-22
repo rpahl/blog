@@ -41,13 +41,9 @@ collections:
 output: 
   distill::distill_article:
     css: theme.css
-
-
 rss:
-  full_content: TRUE
-  categories:
-    - Packages/Releases
-    - R
-    - Statistics
+  full_content: true
+
+ 
     
     
