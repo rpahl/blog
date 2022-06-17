@@ -74,6 +74,7 @@ x |&amp;gt; equals_pattern(&amp;quot;^P&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 x |&amp;gt; startsWith(&amp;quot;z&amp;quot;)      &amp;amp;&amp;amp;
 x %not in% existing_names &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;[1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s it for now. Let me know in the comments how you think about this topic or maybe you have another good example of readable code.&lt;/p&gt;
 &lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
       <distill:md5>328e9d787cd01888f53dfc78e88d12b2</distill:md5>
       <category>base R</category>
@@ -803,7 +804,7 @@ write_results_into_table(data.sim, outFile=&amp;quot;output.xlsx&amp;quot;)&lt;/
 &lt;pre class="r"&gt;&lt;code&gt;# base::mean and stats::rnorm work, because base and stats namespaces are
 # loaded and attached by default:
 mean(rnorm(10))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[1] 0.1534812&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] 0.407841&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In contrast, the &lt;code&gt;library&lt;/code&gt; and &lt;code&gt;require&lt;/code&gt; commands both load the package’s namespace but also attach its namespace to the search path, which allows to refer to functions of the package without using the &lt;code&gt;::&lt;/code&gt; operator.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;library(tools)                # loads namespace and attaches it to search path
 search()&lt;/code&gt;&lt;/pre&gt;

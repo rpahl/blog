@@ -1,9 +1,7 @@
 ---
 title: "Readable code with base R (part 2)"
 description: |
-  It's been a while since my 
-  [first post ](https://rpahl.github.io/r-some-blog/posts/readable-code-part1/)
-  about this topic.
+  It's been a while since my first on this topic.
   Nevertheless, it remains an important issue as (in my humble view) there is
   still too much code appearing in R packages that lacks good readability. 
   So I hope this post helps to promote the beauty of readable code.
