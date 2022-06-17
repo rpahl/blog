@@ -1,0 +1,127 @@
+---
+title: "Readable code with base R (part 2)"
+description: |
+  It's been a while since my 
+  [first post ](https://rpahl.github.io/r-some-blog/posts/readable-code-part1/)
+  about this topic.
+  Nevertheless, it remains an important issue as (in my humble view) there is
+  still too much code appearing in R packages that lacks good readability. 
+  So I hope this post helps to promote the beauty of readable code.
+date: 06-17-2023
+categories:
+  - base R
+  - coding style
+output:
+  distill::distill_article:
+    highlight: kate
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+```{r out.width = '60%', echo = FALSE}
+knitr::include_graphics("easy-read.png")
+```
+
+### Combine `startsWith` and `endsWith` with R's pipe
+
+In my 
+[first post ](https://rpahl.github.io/r-some-blog/posts/readable-code-part1/),
+`startsWith` and `endsWith` were presented. In combination with R's pipe
+operator, we can improve the readability even further.
+
+```{r}
+w <- "Hello World!"
+
+w |> startsWith("Hell")
+
+w |> endsWith("!")
+```
+
+Proceeding with the example of the initial post, let's see this in context of
+control flow.
+
+```{r}
+tell_file_type <- function(filename)
+{
+    if (filename |> endsWith("txt"))
+        print("A text file.")
+    
+    excel_endings <- c("xlsx", "xls")
+    if (any(filename |> endsWith(excel_endings)))
+        print("An Excel file.")
+    
+}
+tell_file_type("A.xlsx")
+```
+
+
+### `%in% and %not in%`
+
+The `%in%` operator is commonly used. To improve the readability of something like
+
+```{r, eval = FALSE}
+existing_names <- c("Lisa", "Bob")
+name <- "Peter"
+hasNewName = !(name %in% existing_names)
+```
+
+you can always define your own operators.
+
+```{r, eval = FALSE}
+`%not in%` <- Negate(`%in%`)
+
+hasNewName = name %not in% existing_names
+```
+
+Obviously, the readability also depends on the choice of proper variable names.
+My general take on this: don't shy away from longish variable names, if it
+improves code readability.
+
+In this context, it is often useful to assign boolean values to variables.
+For example, instead of
+
+```{r, eval = FALSE}
+if (abs_error < 1e-8) {
+    # ...
+}
+```
+
+you should do
+
+```{r, eval = FALSE}
+hasConverged <- abs_error < 1e-8
+
+if (hasConverged) {
+    # ...
+}
+```
+
+That is, it is ok to add redundancies in your code if it improves readability.
+
+Sometimes, it is not immediately clear from the naming of base R functions,
+what they do. Of course, you are free to redefine them with a proper name.
+
+```{r}
+equals_pattern = function(x, pattern, ...) grepl(pattern, x, ...)
+
+x <- "Peter"
+
+x |> equals_pattern("^P")
+```
+
+Lastly, let's combine all of the above.
+
+```{r}
+x |> equals_pattern("^P") && 
+x |> startsWith("z")      &&
+x %not in% existing_names 
+```
+
+That's it for now. Let me know in the comments how you think about this topic
+or maybe you have another good example of readable code.

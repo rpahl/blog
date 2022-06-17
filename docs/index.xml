@@ -12,16 +12,80 @@
       <link>https://rpahl.github.io/r-some-blog/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 17 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Readable code with base R (part 2)</title>
+      <link>https://rpahl.github.io/r-some-blog/posts/readable-code-part2</link>
+      <description>
+
+
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/readable-code-part2easy-read.png" width="60%" /&gt;&lt;/p&gt;
+&lt;h3 id="combine-startswith-and-endswith-with-rs-pipe"&gt;Combine &lt;code&gt;startsWith&lt;/code&gt; and &lt;code&gt;endsWith&lt;/code&gt; with R’s pipe&lt;/h3&gt;
+&lt;p&gt;In my &lt;a href="https://rpahl.github.io/r-some-blog/posts/readable-code-part1/"&gt;first post&lt;/a&gt;, &lt;code&gt;startsWith&lt;/code&gt; and &lt;code&gt;endsWith&lt;/code&gt; were presented. In combination with R’s pipe operator, we can improve the readability even further.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;w &amp;lt;- &amp;quot;Hello World!&amp;quot;
+
+w |&amp;gt; startsWith(&amp;quot;Hell&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="r"&gt;&lt;code&gt;w |&amp;gt; endsWith(&amp;quot;!&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Proceeding with the example of the initial post, let’s see this in context of control flow.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;tell_file_type &amp;lt;- function(filename)
+{
+    if (filename |&amp;gt; endsWith(&amp;quot;txt&amp;quot;))
+        print(&amp;quot;A text file.&amp;quot;)
+    
+    excel_endings &amp;lt;- c(&amp;quot;xlsx&amp;quot;, &amp;quot;xls&amp;quot;)
+    if (any(filename |&amp;gt; endsWith(excel_endings)))
+        print(&amp;quot;An Excel file.&amp;quot;)
+    
+}
+tell_file_type(&amp;quot;A.xlsx&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] &amp;quot;An Excel file.&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="in-and-not-in"&gt;&lt;code&gt;%in% and %not in%&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;%in%&lt;/code&gt; operator is commonly used. To improve the readability of something like&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;existing_names &amp;lt;- c(&amp;quot;Lisa&amp;quot;, &amp;quot;Bob&amp;quot;)
+name &amp;lt;- &amp;quot;Peter&amp;quot;
+hasNewName = !(name %in% existing_names)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you can always define your own operators.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;`%not in%` &amp;lt;- Negate(`%in%`)
+
+hasNewName = name %not in% existing_names&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Obviously, the readability also depends on the choice of proper variable names. My general take on this: don’t shy away from longish variable names, if it improves code readability.&lt;/p&gt;
+&lt;p&gt;In this context, it is often useful to assign boolean values to variables. For example, instead of&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;if (abs_error &amp;lt; 1e-8) {
+    # ...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you should do&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;hasConverged &amp;lt;- abs_error &amp;lt; 1e-8
+
+if (hasConverged) {
+    # ...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That is, it is ok to add redundancies in your code if it improves readability.&lt;/p&gt;
+&lt;p&gt;Sometimes, it is not immediately clear from the naming of base R functions, what they do. Of course, you are free to redefine them with a proper name.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;equals_pattern = function(x, pattern, ...) grepl(pattern, x, ...)
+
+x &amp;lt;- &amp;quot;Peter&amp;quot;
+
+x |&amp;gt; equals_pattern(&amp;quot;^P&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Lastly, let’s combine all of the above.&lt;/p&gt;
+&lt;pre class="r"&gt;&lt;code&gt;x |&amp;gt; equals_pattern(&amp;quot;^P&amp;quot;) &amp;amp;&amp;amp; 
+x |&amp;gt; startsWith(&amp;quot;z&amp;quot;)      &amp;amp;&amp;amp;
+x %not in% existing_names &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="r distill-force-highlighting-css"&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</description>
+      <distill:md5>328e9d787cd01888f53dfc78e88d12b2</distill:md5>
+      <category>base R</category>
+      <category>coding style</category>
+      <guid>https://rpahl.github.io/r-some-blog/posts/readable-code-part2</guid>
+      <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://rpahl.github.io/r-some-blog/posts/readable-code-part2/distill-preview.png" medium="image" type="image/png" width="569" height="322"/>
+    </item>
     <item>
       <title>container: v1.0.0 on CRAN</title>
       <link>https://rpahl.github.io/r-some-blog/posts/container1.0</link>
       <description>
-The update contains some breaking changes and brings a lot of new features
-and operators, which markedly improves using containers in both
-interactive R sessions and code development.
-Also there is a new class dict.table to support the data.table package.
-
 
 
 &lt;h3 id="what-is-container"&gt;What is &lt;code&gt;container&lt;/code&gt;?&lt;/h3&gt;
@@ -29,7 +93,7 @@ Also there is a new class dict.table to support the data.table package.
 &lt;p&gt;A container can be considered as an enhanced version of base R’s list with a carefully designed set of extract, replace, and remove operations. They enable an easier and safer way to work with list-like data structures in interactive R sessions and in particular when developing critical code.&lt;/p&gt;
 &lt;/div&gt;
 &lt;aside&gt;
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/container1.0/container.png" width="100%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/container1.0container.png" width="100%" /&gt;&lt;/p&gt;
 &lt;/aside&gt;
 &lt;p&gt;This blog post can only provide a glimpse of all the things you can do with containers so here the focus is on some features suitable for &lt;em&gt;interactive&lt;/em&gt; R sessions.&lt;/p&gt;
 &lt;h3 id="print"&gt;Print&lt;/h3&gt;
@@ -195,20 +259,16 @@ co&lt;/code&gt;&lt;/pre&gt;
       <category>list</category>
       <category>R package</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/container1.0</guid>
-      <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
       <media:content url="https://rpahl.github.io/r-some-blog/posts/container1.0/distill-preview.png" medium="image" type="image/png" width="602" height="415"/>
     </item>
     <item>
       <title>Why I don't use R Markdown's ref.label</title>
       <link>https://rpahl.github.io/r-some-blog/posts/ref-label</link>
       <description>
-R Markdown provides the chunk option `ref.label` to 
-reuse chunks. In this post, I'll show potential problems with this approach
-and present an easy and safe alternative. 
 
 
-
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/ref-label/ref-label.png" width="50%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/ref-labelref-label.png" width="50%" /&gt;&lt;/p&gt;
 &lt;h2 id="motivation"&gt;Motivation&lt;/h2&gt;
 &lt;p&gt;Consider you have defined variable &lt;code&gt;x&lt;/code&gt;,&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;x = 1&lt;/code&gt;&lt;/pre&gt;
@@ -273,9 +333,6 @@ addY(x, y = 1)&lt;/code&gt;&lt;/pre&gt;
       <title>Quicker knitr kables in RStudio notebook</title>
       <link>https://rpahl.github.io/r-some-blog/posts/kable_if</link>
       <description>
-In this post a simple RStudio hack is presented on how to display tables
-produced via knitr kable efficiently in the RStudio session.
-
 
 
 &lt;h2 id="the-setup"&gt;The setup&lt;/h2&gt;
@@ -358,10 +415,10 @@ produced via knitr kable efficiently in the RStudio session.
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id="the-problem"&gt;The problem&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;But&lt;/em&gt; in the interactive RStudio notebook session the table looks something like the following:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/kable_if/kable.png" width="100%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/kable_ifkable.png" width="100%" /&gt;&lt;/p&gt;
 &lt;p&gt;So first of all, the formatting is not that great. Secondly, the table chunk consumes way too much space of the notebook and, at times, can be very cumbersome to scroll. Also for bigger tables (and depending on your hardware) it can take up to a few seconds for the table to be built.&lt;/p&gt;
 &lt;p&gt;So often when I was using &lt;code&gt;kable&lt;/code&gt;, I felt my workflow being disrupted. In the interactive session I want a table being built quickly and in a clean format. Now, using the simple &lt;code&gt;print&lt;/code&gt; function you’ll get exactly this&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/kable_if/print-table.png" width="100%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/kable_ifprint-table.png" width="100%" /&gt;&lt;/p&gt;
 &lt;p&gt;So my initial quick-and-dirty workaround during the interactive session was to comment out the &lt;code&gt;knitr&lt;/code&gt; statement and use the print function.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;#knitr::kable(head(airquality), caption = &amp;quot;New York Air Quality Measurements.&amp;quot;)
 print(head(airquality))&lt;/code&gt;&lt;/pre&gt;
@@ -370,7 +427,7 @@ print(head(airquality))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We define a simple wrapper, which chooses the corresponding function depending on the context:&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;kable_if &amp;lt;- function(x, ...) if (interactive()) print(x, ...) else knitr::kable(x, ...)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then you simply call it as you would invoke &lt;code&gt;kable&lt;/code&gt; and now you get both, the quick table in the interactive session …&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/kable_if/kable_if.png" width="100%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/kable_ifkable_if.png" width="100%" /&gt;&lt;/p&gt;
 &lt;p&gt;… and a formatted table in the report.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;kable_if(head(airquality), caption = &amp;quot;New York Air Quality Measurements.&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;table&gt;
@@ -450,12 +507,9 @@ print(head(airquality))&lt;/code&gt;&lt;/pre&gt;
       <title>My R Style Guide</title>
       <link>https://rpahl.github.io/r-some-blog/posts/r-style-guide</link>
       <description>
-This is my take on an R style guide. As such, this is going to be a longer 
-post in the hope that is useful to some people out there.
 
 
-
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/r-style-guide/style.png" width="20%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/r-style-guidestyle.png" width="20%" /&gt;&lt;/p&gt;
 &lt;h1 id="intro"&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;There are universal views about readability due to the way how humans process information or text. For example, consider the following number written in two ways:&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;823969346
@@ -749,7 +803,7 @@ write_results_into_table(data.sim, outFile=&amp;quot;output.xlsx&amp;quot;)&lt;/
 &lt;pre class="r"&gt;&lt;code&gt;# base::mean and stats::rnorm work, because base and stats namespaces are
 # loaded and attached by default:
 mean(rnorm(10))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[1] -0.3115525&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] 0.1534812&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In contrast, the &lt;code&gt;library&lt;/code&gt; and &lt;code&gt;require&lt;/code&gt; commands both load the package’s namespace but also attach its namespace to the search path, which allows to refer to functions of the package without using the &lt;code&gt;::&lt;/code&gt; operator.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;library(tools)                # loads namespace and attaches it to search path
 search()&lt;/code&gt;&lt;/pre&gt;
@@ -833,14 +887,9 @@ for (i in 1:length(v)) {
       <title>Readable code with base R (part 1)</title>
       <link>https://rpahl.github.io/r-some-blog/posts/readable-code-part1</link>
       <description>
-Producing readable R code is of great importance, especially if there is a 
-chance that you will share your code with people other than your future self.
-In this series of blog posts, I will present some (often underused) base R 
-functions for this purpose.
 
 
-
-&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog/posts/readable-code-part1/easy-read.png" width="60%" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://rpahl.github.io/r-some-blog//posts/readable-code-part1easy-read.png" width="60%" /&gt;&lt;/p&gt;
 &lt;p&gt;In this post, we cover &lt;code&gt;startsWith&lt;/code&gt;, &lt;code&gt;endsWith&lt;/code&gt;, and &lt;code&gt;Filter&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id="startswith-and-endswith-for-string-matching"&gt;&lt;code&gt;startsWith&lt;/code&gt; and &lt;code&gt;endsWith&lt;/code&gt; for string-matching&lt;/h3&gt;
 &lt;p&gt;There are special base functions for pre- or postfix matching.&lt;/p&gt;
