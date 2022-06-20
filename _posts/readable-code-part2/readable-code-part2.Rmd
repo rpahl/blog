@@ -5,7 +5,7 @@ description: |
   Nevertheless, it remains an important issue as (in my humble view) there is
   still too much code appearing in R packages that lacks good readability. 
   So I hope this post helps to promote the beauty of readable code.
-date: 06-18-2022
+date: 06-21-2022
 categories:
   - base R
   - coding style
