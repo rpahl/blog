@@ -12,7 +12,7 @@
       <link>https://rpahl.github.io/r-some-blog/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jun 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Readable code with base R (part 2)</title>
       <link>https://rpahl.github.io/r-some-blog/posts/readable-code-part2</link>
@@ -80,7 +80,7 @@ x %not in% existing_names &lt;/code&gt;&lt;/pre&gt;
       <category>base R</category>
       <category>coding style</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/readable-code-part2</guid>
-      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
       <media:content url="https://rpahl.github.io/r-some-blog/posts/readable-code-part2/distill-preview.png" medium="image" type="image/png" width="569" height="322"/>
     </item>
     <item>
@@ -804,7 +804,7 @@ write_results_into_table(data.sim, outFile=&amp;quot;output.xlsx&amp;quot;)&lt;/
 &lt;pre class="r"&gt;&lt;code&gt;# base::mean and stats::rnorm work, because base and stats namespaces are
 # loaded and attached by default:
 mean(rnorm(10))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[1] 0.1731684&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] 0.1621935&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In contrast, the &lt;code&gt;library&lt;/code&gt; and &lt;code&gt;require&lt;/code&gt; commands both load the package’s namespace but also attach its namespace to the search path, which allows to refer to functions of the package without using the &lt;code&gt;::&lt;/code&gt; operator.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;library(tools)                # loads namespace and attaches it to search path
 search()&lt;/code&gt;&lt;/pre&gt;
