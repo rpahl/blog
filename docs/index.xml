@@ -35,6 +35,7 @@ w |&amp;gt; startsWith(&amp;quot;Hell&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
         print(&amp;quot;A text file.&amp;quot;)
     
     excel_endings &amp;lt;- c(&amp;quot;xlsx&amp;quot;, &amp;quot;xls&amp;quot;)
+    
     if (any(filename |&amp;gt; endsWith(excel_endings)))
         print(&amp;quot;An Excel file.&amp;quot;)
     
@@ -44,7 +45,9 @@ tell_file_type(&amp;quot;A.xlsx&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id="in-and-not-in"&gt;&lt;code&gt;%in% and %not in%&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;%in%&lt;/code&gt; operator is commonly used. To improve the readability of something like&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;existing_names &amp;lt;- c(&amp;quot;Lisa&amp;quot;, &amp;quot;Bob&amp;quot;)
+
 name &amp;lt;- &amp;quot;Peter&amp;quot;
+
 hasNewName = !(name %in% existing_names)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;you can always define your own operators.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;`%not in%` &amp;lt;- Negate(`%in%`)
@@ -804,7 +807,7 @@ write_results_into_table(data.sim, outFile=&amp;quot;output.xlsx&amp;quot;)&lt;/
 &lt;pre class="r"&gt;&lt;code&gt;# base::mean and stats::rnorm work, because base and stats namespaces are
 # loaded and attached by default:
 mean(rnorm(10))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[1] 0.1621935&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1] -0.266428&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In contrast, the &lt;code&gt;library&lt;/code&gt; and &lt;code&gt;require&lt;/code&gt; commands both load the package’s namespace but also attach its namespace to the search path, which allows to refer to functions of the package without using the &lt;code&gt;::&lt;/code&gt; operator.&lt;/p&gt;
 &lt;pre class="r"&gt;&lt;code&gt;library(tools)                # loads namespace and attaches it to search path
 search()&lt;/code&gt;&lt;/pre&gt;

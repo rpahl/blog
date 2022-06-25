@@ -51,6 +51,7 @@ tell_file_type <- function(filename)
         print("A text file.")
     
     excel_endings <- c("xlsx", "xls")
+    
     if (any(filename |> endsWith(excel_endings)))
         print("An Excel file.")
     
@@ -65,7 +66,9 @@ The `%in%` operator is commonly used. To improve the readability of something li
 
 ```{r, eval = FALSE}
 existing_names <- c("Lisa", "Bob")
+
 name <- "Peter"
+
 hasNewName = !(name %in% existing_names)
 ```
 
