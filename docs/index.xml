@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:distill="https://distill.pub/journal/" version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" >
   <channel>
     <title>R some blog</title>
     <link>https://rpahl.github.io/r-some-blog/</link>
@@ -31,7 +31,7 @@ provides a great way to structure and manage your unit tests.</description>
       <link>https://rpahl.github.io/r-some-blog/posts/readable-code-part2</link>
       <description>It's been a while since my first on this topic.
 Nevertheless, it remains an important issue as (in my humble view) there is
-still too much code appearing in R packages that lacks good readability. 
+still too much code appearing in R packages that lacks good readability.
 So I hope this post helps to promote the beauty of readable code.</description>
       <category>base R</category>
       <category>coding style</category>
@@ -56,7 +56,7 @@ Also there is a new class dict.table to support the data.table package.</descrip
     <item>
       <title>Why I don't use R Markdown's ref.label</title>
       <link>https://rpahl.github.io/r-some-blog/posts/ref-label</link>
-      <description>R Markdown provides the chunk option `ref.label` to 
+      <description>R Markdown provides the chunk option `ref.label` to
 reuse chunks. In this post, I'll show potential problems with this approach
 and present an easy and safe alternative.</description>
       <category>R-Markdown</category>
@@ -80,7 +80,7 @@ produced via knitr kable efficiently in the RStudio session.</description>
     <item>
       <title>My R Style Guide</title>
       <link>https://rpahl.github.io/r-some-blog/posts/r-style-guide</link>
-      <description>This is my take on an R style guide. As such, this is going to be a longer 
+      <description>This is my take on an R style guide. As such, this is going to be a longer
 post in the hope that is useful to some people out there.</description>
       <category>coding style</category>
       <guid>https://rpahl.github.io/r-some-blog/posts/r-style-guide</guid>
@@ -90,9 +90,9 @@ post in the hope that is useful to some people out there.</description>
     <item>
       <title>Readable code with base R (part 1)</title>
       <link>https://rpahl.github.io/r-some-blog/posts/readable-code-part1</link>
-      <description>Producing readable R code is of great importance, especially if there is a 
+      <description>Producing readable R code is of great importance, especially if there is a
 chance that you will share your code with people other than your future self.
-In this series of blog posts, I will present some (often underused) base R 
+In this series of blog posts, I will present some (often underused) base R
 functions for this purpose.</description>
       <category>base R</category>
       <category>coding style</category>
