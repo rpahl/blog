@@ -19,14 +19,14 @@ navbar:
       #    href: https://CRAN.R-project.org/package=container
       #  - text: "GroupSeq"
       #    href: https://CRAN.R-project.org/package=GroupSeq
-    - text: "About Me" 
+    - text: "About Me"
       href: about.html
     - icon: fab fa-github
       href: https://github.com/rpahl/r-some-blog
     - icon: fab fa-stack-overflow
       href: https://stackoverflow.com/users/8120617/rpahl
-    - icon: fab fa-twitter
-      href: https://twitter.com/romanpahl
+    - icon: fab fa-bluesky
+      href: https://bsky.app/profile/rpahl.bsky.social
     - icon: fa fa-rss
       href: index.xml
 base_url: https://rpahl.github.io/r-some-blog/
@@ -38,12 +38,9 @@ collections:
     disqus: rpahl
     share: [twitter, linkedin]
     custom: _custom.html
-output: 
+output:
   distill::distill_article:
     css: theme.css
 rss:
   full_content: true
 
- 
-    
-    

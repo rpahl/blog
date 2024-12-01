@@ -5,7 +5,7 @@
       "title": "About me",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n🎓 Education\r\nI studied computer science (2006) and did research in\r\nthe field of statistics and genetic epidemiology (PhD in 2014).\r\nSince 2015, I work at\r\nGSK Vaccines where I am\r\ncurrently developing statistical software with applications in Technical R&D.\r\n💻 Programming\r\nMy main programming language is\r\n\r\n\r\n with over 15\r\nyears of experience.\r\nI also coded in C++ (e.g. see here),\r\nJava and Python and recently started coding in Javascript.\r\n\r\n\r\n\r\n",
-      "last_modified": "2024-10-07T15:25:44+02:00"
+      "last_modified": "2024-12-01T10:21:18+01:00"
     },
     {
       "path": "index.html",
@@ -13,7 +13,7 @@
       "description": "Some hopefully useful (or even awesome) stuff related to R programming.\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2024-10-07T15:25:45+02:00"
+      "last_modified": "2024-12-01T10:21:19+01:00"
     },
     {
       "path": "r-packages.html",
@@ -21,7 +21,7 @@
       "description": "R packages developed by me.\n",
       "author": [],
       "contents": "\r\n\r\nContents\r\ncontainer\r\nGroupSeq\r\n\r\ncontainer\r\n\r\ncontainer\r\nprovides an enhanced version of base R’s list with a\r\ncarefully designed set of extract, replace, and remove operations that make\r\nit easier and safer to work with list-like data structures.\r\nFull documentation: https://rpahl.github.io/container/\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nGroupSeq\r\n\r\nGroupSeq is a GUI-based tool for\r\ncomputing probabilities of Group Sequential designs,\r\nparticularly, critical boundaries, power, drift, and confidence\r\nintervals.\r\nThe numerical calculations are based on normally distributed\r\ntest statistics and the so-called alpha spending approach by Lan-DeMets with\r\nvarious alpha spending functions being available to choose among.\r\nFull documentation: https://rpahl.github.io/GroupSeq/\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2024-10-07T15:25:46+02:00"
+      "last_modified": "2024-12-01T10:21:20+01:00"
     },
     {
       "path": "shiny-apps.html",
@@ -29,7 +29,7 @@
       "description": "Some fun apps build by me.\n",
       "author": [],
       "contents": "\r\n\r\nContents\r\nVO2max\r\nSquash match simulator\r\n\r\nVO2max\r\n\r\n\r\nvo2max allows to calculate VO2max based on\r\na simple running experiment without having to actually going full max exhaustion,\r\nwhich is especially viable when working with young athletes. Basically,\r\nthe athlete runs three-minute intervals on a treadmill with constant speed,\r\nstarting very low. At the end of each interval, the trainer\r\nnotes the heart frequency (HF) and the speed is increased. Due to the fact that\r\nVO2max more or less is linearly related to heart frequency and running speed,\r\nthe VO2max can be determined quite accurately with 5-6 data points without having\r\nto reach max HF (although the max HF must be known and entered in the app).\r\n\r\nSquash match simulator\r\n\r\n\r\nsquash-sim simulates Squash matches\r\nbased on simple Bernoulli probabilities. The motivation was to develop an\r\nintuition about how much luck is involved in the game. For example, if both\r\nplayers are equal in strength, it is not rare that a player wins 3-0.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2024-10-07T15:25:46+02:00"
+      "last_modified": "2024-12-01T10:21:20+01:00"
     }
   ],
   "collections": ["posts/posts.json"]
