@@ -12,7 +12,20 @@
       <link>https://rpahl.github.io/r-some-blog/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Introducing the {pipeflow} package</title>
+      <link>https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow</link>
+      <description>Efficiently managing complex data analysis workflows can be a challenge.
+In standard R programming, chaining functions, tracking intermediate results,
+and maintaining dependencies between steps often lead to cluttered code that
+is difficult to scale or modify. Enter {pipeflow} — a beginner-friendly R
+package designed to simplify and streamline data analysis pipelines by making
+them modular, intuitive, and adaptable.</description>
+      <guid>https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow</guid>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow/logo.png" medium="image" type="image/png" width="196" height="145"/>
+    </item>
     <item>
       <title>Nested unit tests with testthat</title>
       <link>https://rpahl.github.io/r-some-blog/posts/2024-10-07-nested-unit-tests-with-testthat</link>

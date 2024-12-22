@@ -10,15 +10,9 @@ navbar:
     href: https://github.com/rpahl
   right:
     - text: "R packages"
-      href: r-packages.html
+      href: https://rpahl.r-universe.dev/packages
     - text: "Shiny Apps"
       href: shiny-apps.html
-      #menu:
-      #  - text: "container"
-      #    #icon: fab fa-r-project
-      #    href: https://CRAN.R-project.org/package=container
-      #  - text: "GroupSeq"
-      #    href: https://CRAN.R-project.org/package=GroupSeq
     - text: "About Me"
       href: about.html
     - icon: fab fa-github

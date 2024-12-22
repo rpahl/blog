@@ -1,0 +1,261 @@
+---
+title: "Introducing the {pipeflow} package"
+description: |
+  Efficiently managing complex data analysis workflows can be a challenge.
+  In standard R programming, chaining functions, tracking intermediate results,
+  and maintaining dependencies between steps often lead to cluttered code that
+  is difficult to scale or modify. Enter {pipeflow} — a beginner-friendly R
+  package designed to simplify and streamline data analysis pipelines by making
+  them modular, intuitive, and adaptable.
+date: 2024-12-22
+output:
+  distill::distill_article:
+    highlight: default
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this post, we'll contrast the traditional approach with {pipeflow}, showcasing how it
+empowers users to build robust workflows while reducing complexity. Let's dive in!
+
+<aside>
+```{r out.width = '100%', echo = FALSE}
+knitr::include_graphics("logo.png")
+```
+</aside>
+
+### The Problem: Standard R Workflow
+
+Consider an analysis of R's airquality data set,
+
+```{r}
+head(airquality)
+```
+
+where we want to:
+
+- Add a new column, Temp.Celsius, converting temperatures from Fahrenheit to Celsius.
+- Fit a linear model predicting Ozone based on temperature.
+- Visualize the data alongside the model fit.
+
+Here's how the workflow might look using standard R:
+
+```{r, standard-workflow}
+library(ggplot2)
+
+# Step 1: Prepare the data
+airquality$Temp.Celsius <- (airquality$Temp - 32) * 5 / 9
+
+# Step 2: Fit a linear model
+model <- lm(Ozone ~ Temp.Celsius, data = airquality)
+
+# Step 3: Generate the plot
+coeffs <- coefficients(model)
+ggplot(airquality) +
+  geom_point(aes(Temp.Celsius, Ozone)) +
+  geom_abline(intercept = coeffs[1], slope = coeffs[2]) +
+  labs(title = "Linear model fit")
+```
+
+While functional, this approach has clear drawbacks:
+
+- Manual Dependency Management: Each step depends on outputs from the previous
+  steps, which must be tracked manually.
+- Limited Reusability: Modifying or extending the workflow requires substantial
+  effort and risks introducing errors.
+- Cluttered Code: With all operations in a single script, the overall structure
+  of the workflow becomes unclear.
+
+
+### The {pipeflow} Solution: Modular and Manageable
+
+{pipeflow} addresses these challenges by organizing workflows into modular,
+dependency-aware steps. Let's rewrite the same workflow using {pipeflow}.
+
+#### Step 1: Initialize the Pipeline
+
+First, we create a pipeline named "my-pipeline" and load the airquality
+dataset as input:
+
+```{r init-pipeline}
+library(pipeflow)
+
+pip <- Pipeline$new("my-pipeline", data = airquality)
+```
+
+#### Step 2: Add a Data Preparation Step
+
+Next, we add a step to calculate Temp.Celsius:
+
+```{r step-data-prep}
+pip$add(
+  "data_prep",
+  function(data = ~data) {
+    replace(data, "Temp.Celsius", (data[, "Temp"] - 32) * 5 / 9)
+  }
+)
+```
+
+#### Step 3: Fit a Linear Model
+
+We add another step to fit a linear model using the transformed data:
+
+```{r step-model-fit}
+pip$add(
+  "model_fit",
+  function(data = ~data_prep, xVar = "Temp.Celsius") {
+    lm(paste("Ozone ~", xVar), data = data)
+  }
+)
+```
+
+#### Step 4: Visualize the Model Fit
+
+Finally, we create a visualization step that uses the outputs from `model_fit`
+and `data_prep`:
+
+```{r step-model-plot}
+pip$add(
+  "model_plot",
+  function(
+    model = ~model_fit,
+    data = ~data_prep,
+    xVar = "Temp.Celsius",
+    title = "Linear model fit"
+  ) {
+    coeffs <- coefficients(model)
+    ggplot(data) +
+      geom_point(aes(.data[[xVar]], .data[["Ozone"]])) +
+      geom_abline(intercept = coeffs[1], slope = coeffs[2]) +
+      labs(title = title)
+  }
+)
+```
+
+Now, we can run the pipeline and inspect the model plot:
+
+```{r run-Pipeline, fig.alt = "model-plot"}
+pip$run()
+pip$get_out("model_plot")
+```
+
+### Why {pipeflow}?
+
+Here are the key advantages of using {pipeflow} over the standard approach:
+
+- Automatic Dependency Management: Dependencies between steps are handled
+  automatically using the ~ operator to reference previous steps -> No
+  manual tracking of intermediate variables.
+- Modularity: Each step is independent, making pipelines easier to debug
+  and modify.
+- Flexibility: Parameters can be dynamically updated without affecting the
+  rest of the pipeline and steps that depend on modified inputs are
+  automatically rerun.
+- Visualization: {pipeflow} supports graphical representations of pipelines
+  for a clear view of the workflow structure.
+
+
+#### Visualizing the Pipeline
+
+With {pipeflow}, you can easily visualize your pipeline using the visNetwork
+package to produce a diagram showing the flow from `data` to `data_prep`,
+`model_fit`, and `model_plot`, making the workflow immediately understandable.
+
+```{r, eval = FALSE}
+library(visNetwork)
+do.call(visNetwork, args = pip$get_graph()) |>
+    visHierarchicalLayout(direction = "LR")
+```
+```{r, echo = FALSE, fig.alt = "pipeline-visualization"}
+library(visNetwork)
+do.call(visNetwork, args = c(pip$get_graph(), list(height = 100))) |>
+    visHierarchicalLayout(direction = "LR")
+```
+
+
+#### Ensuring Integrity
+
+{pipeflow} also verifies pipeline integrity at definition time. For example,
+trying to reference a non-existent step triggers an error:
+
+```{r bad-reference, error = TRUE}
+pip$add(
+  "invalid_step",
+  function(data = ~non_existent) {
+    data
+  }
+)
+```
+
+This proactive error-checking ensures that pipelines remain robust and free
+from misconfigurations.
+
+### Dynamic Updates
+
+One of {pipeflow}'s standout features is its ability to dynamically update
+parameters and rerun only the affected steps. For example:
+
+```{r}
+# Change the predictor variable
+pip$set_params(list(xVar = "Solar.R"))
+pip$run()
+```
+
+Only the steps depending on `xVar` (i.e., `model_fit` and `model_plot`)
+are rerun.
+
+```{r}
+# Update input data using only the first 10 rows
+pip$set_data(airquality[1:10, ])
+pip$run()
+```
+
+The entire pipeline is rerun, as all steps depend on the input data.
+
+```{r}
+# Update the plot title
+pip$set_params(list(title = "Updated Plot Title"))
+pip$run()
+```
+
+Only the `model_plot` step is rerun. Let's inspect the final result with
+the updated x-axis variable and plot title:
+
+```{r, fig.alt = "updated-plot"}
+pip$get_out("model_plot")
+```
+
+### {pipeflow} vs. targets
+The R ecosystem includes powerful tools like
+[targets](https://CRAN.R-project.org/package=targets), designed for advanced,
+reproducible workflows. However,
+[targets](https://CRAN.R-project.org/package=targets)
+may involve additional setup and a steeper learning curve while
+{pipeflow} emphasizes simplicity:
+
+- Quick Setup: Define and run a pipeline in just a few steps.
+- Intuitive Design: Seamlessly manage dependencies without extra configuration.
+- Dynamic Updates: Modify parameters and inputs on the fly.
+
+While targets excels in highly complex workflows, {pipeflow} offers a
+versatile solution that's both beginner-friendly but still capable of
+supporting demanding tasks.
+
+### Conclusion
+
+{pipeflow} transforms the way you build and manage data analysis workflows in R.
+By automating dependency tracking, ensuring pipeline integrity, and enabling
+dynamic updates, it reduces complexity and enhances productivity. Whether
+you're working on a simple analysis or a large-scale project, {pipeflow} helps
+you focus on insights rather than infrastructure.
+
+Ready to give {pipeflow} a try? Explore the
+[documentation](https://rpahl.github.io/pipeflow/index.html) to learn more
+and start building smarter pipelines today!
