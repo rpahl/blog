@@ -8,6 +8,10 @@ description: |
   package designed to simplify and streamline data analysis pipelines by making
   them modular, intuitive, and adaptable.
 date: 2024-12-22
+categories:
+  - data analysis workflows
+  - pipeline tools
+  - reproducible research
 output:
   distill::distill_article:
     highlight: default
