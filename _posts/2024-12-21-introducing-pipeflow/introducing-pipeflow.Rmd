@@ -9,7 +9,7 @@ description: |
   them modular, intuitive, and adaptable.
 date: 2024-12-22
 categories:
-  - data analysis workflows
+  - pipeflow
   - pipeline tools
   - reproducible research
 output:

@@ -124,7 +124,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Introducing the {pipeflow} package"]},{"type":"character","attributes":{},"value":["Efficiently managing complex data analysis workflows can be a challenge.\nIn standard R programming, chaining functions, tracking intermediate results,\nand maintaining dependencies between steps often lead to cluttered code that\nis difficult to scale or modify. Enter {pipeflow} — a beginner-friendly R\npackage designed to simplify and streamline data analysis pipelines by making\nthem modular, intuitive, and adaptable."]},{"type":"character","attributes":{},"value":["2024-12-22"]},{"type":"character","attributes":{},"value":["data analysis workflows","pipeline tools","reproducible research"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["highlight","toc","toc_depth","toc_float","self_contained"]}},"value":[{"type":"character","attributes":{},"value":["default"]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow/"]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","date","categories","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Introducing the {pipeflow} package"]},{"type":"character","attributes":{},"value":["Efficiently managing complex data analysis workflows can be a challenge.\nIn standard R programming, chaining functions, tracking intermediate results,\nand maintaining dependencies between steps often lead to cluttered code that\nis difficult to scale or modify. Enter {pipeflow} — a beginner-friendly R\npackage designed to simplify and streamline data analysis pipelines by making\nthem modular, intuitive, and adaptable."]},{"type":"character","attributes":{},"value":["2024-12-22"]},{"type":"character","attributes":{},"value":["pipeflow","pipeline tools","reproducible research"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["highlight","toc","toc_depth","toc_float","self_contained"]}},"value":[{"type":"character","attributes":{},"value":["default"]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow/"]},{"type":"character","attributes":{},"value":["https://rpahl.github.io/r-some-blog/posts/2024-12-21-introducing-pipeflow/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2261,7 +2261,7 @@ d-article div.sourceCode pre {
 
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
-  <a href="../../index.html#category:data_analysis_workflows" class="dt-tag">data analysis workflows</a>
+  <a href="../../index.html#category:pipeflow" class="dt-tag">pipeflow</a>
   <a href="../../index.html#category:pipeline_tools" class="dt-tag">pipeline tools</a>
   <a href="../../index.html#category:reproducible_research" class="dt-tag">reproducible research</a>
 </div>
@@ -2409,13 +2409,13 @@ and <code>data_prep</code>:</p>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>run</span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>INFO  [2024-12-23 10:32:08.415] Start run of &#39;my-pipeline&#39; pipeline:
-INFO  [2024-12-23 10:32:08.447] Step 1/4 data
-INFO  [2024-12-23 10:32:08.458] Step 2/4 data_prep
-INFO  [2024-12-23 10:32:08.483] Step 3/4 model_fit
-INFO  [2024-12-23 10:32:08.487] Step 4/4 model_plot
-INFO  [2024-12-23 10:32:08.493] Finished execution of steps.
-INFO  [2024-12-23 10:32:08.494] Done.</code></pre>
+<pre><code>INFO  [2024-12-23 11:36:10.291] Start run of &#39;my-pipeline&#39; pipeline:
+INFO  [2024-12-23 11:36:10.321] Step 1/4 data
+INFO  [2024-12-23 11:36:10.332] Step 2/4 data_prep
+INFO  [2024-12-23 11:36:10.357] Step 3/4 model_fit
+INFO  [2024-12-23 11:36:10.361] Step 4/4 model_plot
+INFO  [2024-12-23 11:36:10.368] Finished execution of steps.
+INFO  [2024-12-23 11:36:10.368] Done.</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>get_out</span><span class='op'>(</span><span class='st'>"model_plot"</span><span class='op'>)</span></span></code></pre>
 </div>
@@ -2447,8 +2447,8 @@ package to produce a diagram showing the flow from <code>data</code> to <code>da
 </div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-5a7f8140909964a399d2" style="width:624px;height:100px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5a7f8140909964a399d2">{"x":{"nodes":{"id":[1,2,3,4],"label":["data","data_prep","model_fit","model_plot"],"group":["data","data_prep","model_fit","model_plot"],"shape":["database","database","box","box"],"color":["lightgreen","lightgreen","lightgreen","lightgreen"],"title":["<p><\/p>","<p><\/p>","<p><\/p>","<p><\/p>"]},"edges":{"from":[1,2,2,3],"to":[2,3,4,4],"arrows":["to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":["data","data_prep","model_fit","model_plot"],"width":null,"height":100,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-60a70e8b26ce914fc1d6" style="width:624px;height:100px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-60a70e8b26ce914fc1d6">{"x":{"nodes":{"id":[1,2,3,4],"label":["data","data_prep","model_fit","model_plot"],"group":["data","data_prep","model_fit","model_plot"],"shape":["database","database","box","box"],"color":["lightgreen","lightgreen","lightgreen","lightgreen"],"title":["<p><\/p>","<p><\/p>","<p><\/p>","<p><\/p>"]},"edges":{"from":[1,2,2,3],"to":[2,3,4,4],"arrows":["to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":["data","data_prep","model_fit","model_plot"],"width":null,"height":100,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
 </div>
 <h4 id="ensuring-integrity">Ensuring Integrity</h4>
 <p>{pipeflow} also verifies pipeline integrity at definition time. For example,
@@ -2475,13 +2475,13 @@ parameters and rerun only the affected steps. For example:</p>
 <span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>set_params</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>xVar <span class='op'>=</span> <span class='st'>"Solar.R"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>run</span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>INFO  [2024-12-23 10:32:08.897] Start run of &#39;my-pipeline&#39; pipeline:
-INFO  [2024-12-23 10:32:08.898] Step 1/4 data - skip &#39;done&#39; step
-INFO  [2024-12-23 10:32:08.899] Step 2/4 data_prep - skip &#39;done&#39; step
-INFO  [2024-12-23 10:32:08.900] Step 3/4 model_fit
-INFO  [2024-12-23 10:32:08.903] Step 4/4 model_plot
-INFO  [2024-12-23 10:32:08.912] Finished execution of steps.
-INFO  [2024-12-23 10:32:08.913] Done.</code></pre>
+<pre><code>INFO  [2024-12-23 11:36:10.782] Start run of &#39;my-pipeline&#39; pipeline:
+INFO  [2024-12-23 11:36:10.783] Step 1/4 data - skip &#39;done&#39; step
+INFO  [2024-12-23 11:36:10.784] Step 2/4 data_prep - skip &#39;done&#39; step
+INFO  [2024-12-23 11:36:10.785] Step 3/4 model_fit
+INFO  [2024-12-23 11:36:10.789] Step 4/4 model_plot
+INFO  [2024-12-23 11:36:10.798] Finished execution of steps.
+INFO  [2024-12-23 11:36:10.799] Done.</code></pre>
 </div>
 <p>Only the steps depending on <code>xVar</code> (i.e., <code>model_fit</code> and <code>model_plot</code>)
 are rerun.</p>
@@ -2491,13 +2491,13 @@ are rerun.</p>
 <span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>set_data</span><span class='op'>(</span><span class='va'>airquality</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='op'>]</span><span class='op'>)</span></span>
 <span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>run</span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>INFO  [2024-12-23 10:32:08.941] Start run of &#39;my-pipeline&#39; pipeline:
-INFO  [2024-12-23 10:32:08.942] Step 1/4 data
-INFO  [2024-12-23 10:32:08.945] Step 2/4 data_prep
-INFO  [2024-12-23 10:32:08.950] Step 3/4 model_fit
-INFO  [2024-12-23 10:32:08.952] Step 4/4 model_plot
-INFO  [2024-12-23 10:32:08.957] Finished execution of steps.
-INFO  [2024-12-23 10:32:08.958] Done.</code></pre>
+<pre><code>INFO  [2024-12-23 11:36:10.828] Start run of &#39;my-pipeline&#39; pipeline:
+INFO  [2024-12-23 11:36:10.829] Step 1/4 data
+INFO  [2024-12-23 11:36:10.831] Step 2/4 data_prep
+INFO  [2024-12-23 11:36:10.837] Step 3/4 model_fit
+INFO  [2024-12-23 11:36:10.840] Step 4/4 model_plot
+INFO  [2024-12-23 11:36:10.846] Finished execution of steps.
+INFO  [2024-12-23 11:36:10.847] Done.</code></pre>
 </div>
 <p>The entire pipeline is rerun, as all steps depend on the input data.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2506,13 +2506,13 @@ INFO  [2024-12-23 10:32:08.958] Done.</code></pre>
 <span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>set_params</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Updated Plot Title"</span><span class='op'>)</span><span class='op'>)</span></span>
 <span><span class='va'>pip</span><span class='op'>$</span><span class='fu'>run</span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>INFO  [2024-12-23 10:32:08.987] Start run of &#39;my-pipeline&#39; pipeline:
-INFO  [2024-12-23 10:32:08.988] Step 1/4 data - skip &#39;done&#39; step
-INFO  [2024-12-23 10:32:08.989] Step 2/4 data_prep - skip &#39;done&#39; step
-INFO  [2024-12-23 10:32:08.990] Step 3/4 model_fit - skip &#39;done&#39; step
-INFO  [2024-12-23 10:32:08.991] Step 4/4 model_plot
-INFO  [2024-12-23 10:32:08.996] Finished execution of steps.
-INFO  [2024-12-23 10:32:08.997] Done.</code></pre>
+<pre><code>INFO  [2024-12-23 11:36:10.878] Start run of &#39;my-pipeline&#39; pipeline:
+INFO  [2024-12-23 11:36:10.879] Step 1/4 data - skip &#39;done&#39; step
+INFO  [2024-12-23 11:36:10.881] Step 2/4 data_prep - skip &#39;done&#39; step
+INFO  [2024-12-23 11:36:10.882] Step 3/4 model_fit - skip &#39;done&#39; step
+INFO  [2024-12-23 11:36:10.884] Step 4/4 model_plot
+INFO  [2024-12-23 11:36:10.889] Finished execution of steps.
+INFO  [2024-12-23 11:36:10.890] Done.</code></pre>
 </div>
 <p>Only the <code>model_plot</code> step is rerun. Let’s inspect the final result with
 the updated x-axis variable and plot title:</p>
